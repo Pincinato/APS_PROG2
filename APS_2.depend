@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1458069429 source:/home/thiago/Documents/UTFPR/Disciplinas/Prog2/Prog2_cpp/APS_2/main.cpp
+	<iostream>
+	"Principal.h"
+
+1458088692 /home/thiago/Documents/UTFPR/Disciplinas/Prog2/Prog2_cpp/APS_2/Principal.h
+	"Telas.h"
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+
+1460332442 source:/home/thiago/Documents/UTFPR/Disciplinas/Prog2/Prog2_cpp/APS_2/Principal.cpp
+	"Principal.h"
+
+1458095616 source:/home/thiago/Documents/UTFPR/Disciplinas/Prog2/Prog2_cpp/APS_2/Telas.cpp
+	"Telas.h"
+
+1458094836 /home/thiago/Documents/UTFPR/Disciplinas/Prog2/Prog2_cpp/APS_2/Telas.h
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<string.h>
+	<iostream>
+
