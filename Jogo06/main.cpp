@@ -7,11 +7,51 @@
 #include "GerenciadorArquivo.h"
 
 #include <iostream>
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
+
 
 using namespace std;
 
 int main()
 {
+
+ ///teste audio por sample
+ ALLEGRO_SAMPLE *sample = NULL;
+    if (!al_install_audio())
+    {
+        fprintf(stderr, "Falha ao inicializar áudio.\n");
+        return false;
+    }
+
+    if (!al_init_acodec_addon())
+    {
+        fprintf(stderr, "Falha ao inicializar codecs de áudio.\n");
+        return false;
+    }
+    if (!al_reserve_samples(1))
+    {
+        fprintf(stderr, "Falha ao alocar canais de áudio.\n");
+        return false;
+    }
+     sample = al_load_sample("/home/thiago/TeM/Sonic_BOOM.ogg");
+    if (!sample)
+    {
+        fprintf(stderr, "Falha ao carregar sample.\n");
+//        al_destroy_display(janela);
+        return false;
+    }
+    al_play_sample(sample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+    ///
+    ///fim de teste
+
+
+
+
+
+
+
+
     GerenciadorGrafico Gerenciador;
     Jogador Player1;
     Crabmeat Enemy1;
@@ -189,6 +229,7 @@ int main()
     Player1.DestroiTudo();
     Enemy1.DestroiTudo();
     Gerenciador.DestroiTudo();
+    al_destroy_sample(sample);
 
     return 0;
 }

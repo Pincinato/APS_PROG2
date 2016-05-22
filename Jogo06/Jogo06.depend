@@ -27,7 +27,7 @@
 	"Crabmeat.h"
 	<iostream>
 
-1463935448 source:/home/thiago/TeM/Jogo06/Crabmeat.cpp
+1463935876 source:/home/thiago/TeM/Jogo06/Crabmeat.cpp
 	"Crabmeat.h"
 
 1463935888 /home/thiago/TeM/Jogo06/Crabmeat.h
@@ -45,19 +45,21 @@
 1463933774 source:/home/thiago/TeM/Jogo06/GerenciadorGrafico.cpp
 	"GerenciadorGrafico.h"
 
-1463931081 source:/home/thiago/TeM/Jogo06/Jogador.cpp
+1463935802 source:/home/thiago/TeM/Jogo06/Jogador.cpp
 	"Jogador.h"
 
 1463935774 /home/thiago/TeM/Jogo06/Jogador.h
 	"GerenciadorGrafico.h"
 	<iostream>
 
-1463934312 source:/home/thiago/TeM/Jogo06/main.cpp
+1463939193 source:/home/thiago/TeM/Jogo06/main.cpp
 	"GerenciadorGrafico.h"
 	"Jogador.h"
 	"Crabmeat.h"
 	"GerenciadorArquivo.h"
 	<iostream>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
 
 1463932621 source:/home/thiago/TeM/Jogo06/GerenciadorArquivo.cpp
 	"GerenciadorArquivo.h"
