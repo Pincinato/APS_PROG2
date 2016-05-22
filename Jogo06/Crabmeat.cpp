@@ -37,6 +37,10 @@ int Crabmeat::GetposX(){
     return posx;
 }
 
+int Crabmeat::GetposY(){
+
+    return posy;
+}
 
 void Crabmeat::SetposX(int x){
 
@@ -81,6 +85,14 @@ void Crabmeat::SetSources()
     if(sourceX >= al_get_bitmap_width(crabmeat))
         sourceX = 0;
 }
+
+ALLEGRO_BITMAP * Crabmeat::GetBitmap(){
+
+    return crabmeat;
+
+}
+
+
 
 // METODO PARA DESENHAR O INIMIGO CRABMEAT
 void Crabmeat::DesenhaPersonagem()

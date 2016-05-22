@@ -161,7 +161,11 @@ int main()
             cout << "Jogador: x = " << Player1.GetX() << endl;
             cout << "Inimigo: x = " << Enemy1.GetX() << endl;
             }
-
+            if(Player1.GetposX() > (Enemy1.GetposX()-al_get_bitmap_width(Enemy1.GetBitmap())/2 )&& Player1.GetposX() < (Enemy1.GetposX() +al_get_bitmap_width(Enemy1.GetBitmap())/2) )
+            {
+                if(Player1.GetposY() < (Enemy1.GetposY()+al_get_bitmap_height(Enemy1.GetBitmap())/2 ))
+                printf("Colidiu \n");
+            }
             Player1.SetSources(botaoprecionado);
             Enemy1.SetX();
             Enemy1.SetSources();

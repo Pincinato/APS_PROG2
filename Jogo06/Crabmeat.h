@@ -32,6 +32,9 @@ public:
     float GetX();
 
     int GetposX();
+    int GetposY();
+
+    ALLEGRO_BITMAP* GetBitmap();
 
     // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
     void SetX();

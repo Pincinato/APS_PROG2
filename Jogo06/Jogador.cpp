@@ -32,6 +32,11 @@ float Jogador::GetX()
     return posx;
 }
 
+int Jogador::GetposY(){
+
+    return posy;
+}
+
 void Jogador::SetposX(int x){
 
     posx=x;

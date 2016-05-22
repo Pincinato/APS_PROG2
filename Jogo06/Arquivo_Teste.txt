@@ -1,4 +1,4 @@
 Jogador 
-61
+125
 Inimigo-Crabmeat 
-536
+0
