@@ -6,3 +6,10 @@
 	<allegro5/allegro_image.h>
 	<iostream>
 
+1463869880 source:/home/thiago/TeM/testepersonagem/main.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<iostream>
+

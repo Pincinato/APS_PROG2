@@ -20,3 +20,37 @@
 	"Jogador.h"
 	<iostream>
 
+1463867569 source:/home/thiago/TeM/Jogo04/GerenciadorGrafico.cpp
+	"GerenciadorGrafico.h"
+
+1463867569 /home/thiago/TeM/Jogo04/GerenciadorGrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+
+1463878080 source:/home/thiago/TeM/Jogo04/Jogador.cpp
+	"Jogador.h"
+
+1463878080 /home/thiago/TeM/Jogo04/Jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1463878109 source:/home/thiago/TeM/Jogo04/main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	"GerenciadorArquivo.h"
+	<iostream>
+
+1463877550 /home/thiago/TeM/Jogo04/GerenciadorArquivo.h
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<string>
+	"Jogador.h"
+
+1463878091 source:/home/thiago/TeM/Jogo04/GerenciadorArquivo.cpp
+	"GerenciadorArquivo.h"
+

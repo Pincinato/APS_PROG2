@@ -52,6 +52,11 @@ int Jogador::GetX()
     return posx;
 }
 
+void Jogador::SetposX(int x){
+
+ posx=x;
+}
+
 // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
 void Jogador::SetX()
 {

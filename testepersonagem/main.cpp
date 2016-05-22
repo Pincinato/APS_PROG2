@@ -64,16 +64,16 @@ int main()
     // CRIANDO A FILA DE EVENTO
     Fila_Eventos = al_create_event_queue();
 
-    sonic[0] = al_load_bitmap("sonic01.bmp");
-    sonic[1] = al_load_bitmap("sonic02.bmp");
-    sonic[2] = al_load_bitmap("sonic03.bmp");
-    sonic[3] = al_load_bitmap("sonic04.bmp");
-    sonic[4] = al_load_bitmap("sonic05.bmp");
-    sonic[5] = al_load_bitmap("sonic06.bmp");
-    sonic[6] = al_load_bitmap("sonic07.bmp");
-    sonic[7] = al_load_bitmap("sonic08.bmp");
-    sonic[8] = al_load_bitmap("sonic09.bmp");
-    sonic[9] = al_load_bitmap("sonic10.bmp");
+    sonic[0] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic01.bmp");
+    sonic[1] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic02.bmp");
+    sonic[2] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic03.bmp");
+    sonic[3] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic04.bmp");
+    sonic[4] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic05.bmp");
+    sonic[5] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic06.bmp");
+    sonic[6] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic07.bmp");
+    sonic[7] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic08.bmp");
+    sonic[8] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic09.bmp");
+    sonic[9] = al_load_bitmap("/home/thiago/TeM/testepersonagem/sonic10.bmp");
 
     /// ----------REGISTRO DE SOURCES----------
     // TODO EVENTO RELACIONADO AO TECLADO SERA REGISTRADO EM FILA_EVENTOS

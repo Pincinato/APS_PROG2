@@ -3,6 +3,7 @@
 
 #include "GerenciadorGrafico.h"
 #include "Jogador.h"
+#include "GerenciadorArquivo.h"
 #define CIMA 0
 #define BAIXO 1
 #define DIREITA 2
@@ -16,7 +17,7 @@ int main()
 {
     GerenciadorGrafico Gerenciador;
     Jogador Player1;
-
+    GerenciadorArquivo Arquivo;
     /// ----------VARIÁVEIS DO JOGO----------
     bool fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
     int aux = 0; // VARIAVEL AUXILIAR PARA PERCORRER O VETOR DA IMAGEM DO JOGADOR
@@ -27,7 +28,7 @@ int main()
 
     // ESCONDENDO O CURSOR DO MOUSE
     // al_hide_mouse_cursor(display);
-
+    Arquivo.Load_Jogador(&Player1);
     while(!fim)
     {
         // CRIANDO UM EVENTO
@@ -145,6 +146,7 @@ int main()
     }
 
     // PERGUNTAR AO PROFESSOR
+    Arquivo.Salva_Jogador(Player1);
     Player1.DestroiTudo();
     Gerenciador.DestroiTudo();
 
