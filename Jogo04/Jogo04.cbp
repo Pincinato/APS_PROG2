@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
@@ -46,6 +47,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="GerenciadorArquivo.cpp" />
+		<Unit filename="GerenciadorArquivo.h" />
 		<Unit filename="GerenciadorGrafico.cpp" />
 		<Unit filename="GerenciadorGrafico.h" />
 		<Unit filename="Jogador.cpp" />

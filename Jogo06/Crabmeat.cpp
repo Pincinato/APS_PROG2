@@ -32,6 +32,18 @@ float Crabmeat::GetX()
     return posx;
 }
 
+int Crabmeat::GetposX(){
+
+    return posx;
+}
+
+
+void Crabmeat::SetposX(int x){
+
+    posx=x;
+
+}
+
 // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
 void Crabmeat::SetX()
 {

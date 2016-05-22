@@ -34,10 +34,11 @@ public:
 
     // METODO PARA OBTER A COORDENADA X DA POSICAO DO PERSONAGEM
     float GetX();
+    int GetposX();
 
     // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
     void SetX();
-
+    void SetposX(int x);
     // METODO PARA ALTERAR A DIRECAO
     void SetDirecao(int Direcao);
 

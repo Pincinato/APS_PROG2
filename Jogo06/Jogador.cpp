@@ -32,6 +32,19 @@ float Jogador::GetX()
     return posx;
 }
 
+void Jogador::SetposX(int x){
+
+    posx=x;
+
+}
+
+int Jogador::GetposX()
+{
+
+    return posx;
+}
+
+
 // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
 void Jogador::SetX()
 {

@@ -4,6 +4,7 @@
 #include "GerenciadorGrafico.h"
 #include "Jogador.h"
 #include "Crabmeat.h"
+#include "GerenciadorArquivo.h"
 
 #include <iostream>
 
@@ -14,22 +15,31 @@ int main()
     GerenciadorGrafico Gerenciador;
     Jogador Player1;
     Crabmeat Enemy1;
+    GerenciadorArquivo arquivo;
 
     /// ----------VARIÁVEIS DO JOGO----------
     bool fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
     bool botaoprecionado = false; // ATRIBUTO AUXILIAR PARA IDENTIFICAR SE UMA TECLA ESTA PRECIONADA
-
+    bool system_pause= false;
+    int opcao_pause =0;
+    int enable_pause=0;
     /// ----------LOOP PRINCIPAL----------
     // INICIANDO O CONTADOR
     al_start_timer(Gerenciador.GetTimer());
+    Gerenciador.CriaFonte();
 
     // ESCONDENDO O CURSOR DO MOUSE
     // al_hide_mouse_cursor(display);
 
+    /// teste para carregar os elementos
+    arquivo.Load_Inimigo(&Enemy1);
+    arquivo.Load_Jogador(&Player1);
+    ///
     while(!fim)
     {
         // CRIANDO UM EVENTO
         ALLEGRO_EVENT ev;
+        system_pause=false;
 
         // AGUARDANDO UM EVENTO ACONTECER
         al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
@@ -61,8 +71,63 @@ int main()
             case ALLEGRO_KEY_LEFT:
                 Player1.SetDirecao(ESQUERDA);
                 break;
+            case ALLEGRO_KEY_SPACE:
+                Gerenciador.Pause(opcao_pause);
+                while(!system_pause)
+                {
+                 al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
+                 if(ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
+                    {
+                    system_pause = true;
+                    }
+                 switch(ev.keyboard.keycode)
+                {
+                    case ALLEGRO_KEY_DOWN:
+                    if(enable_pause==0)
+                    {
+                    opcao_pause++;
+                    if(opcao_pause==3)
+                        opcao_pause=0;
+                    Gerenciador.Pause(opcao_pause);
+                    enable_pause=1;
+                    }
+                    break;
+                    case ALLEGRO_KEY_RIGHT:
+                    if(enable_pause==0)
+                    {
+                    opcao_pause++;
+                    if(opcao_pause==3)
+                        opcao_pause=0;
+                    Gerenciador.Pause(opcao_pause);
+                    enable_pause=1;
+                    }
+                    break;
+                    case ALLEGRO_KEY_ENTER:
+                    switch(opcao_pause){
+                        case 0:
+                          system_pause=true;
+                          opcao_pause=0;
+                        break;
+                        case 1:
+                            arquivo.Salva_jogo();
+                            arquivo.Salva_Jogador(Player1);
+                            arquivo.Salva_Inimigo(&Enemy1);
+                        break;
+                        case 2:
+                            system_pause=true;
+                            fim=true;
+                            opcao_pause=0;
+                        break;
+
+                    }
+                    break;
+                    default:
+                    enable_pause=0;
+                    break;
+                }
             }
         }
+    }
 
         /*if(Player1.GetX() > 0)
         {

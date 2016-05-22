@@ -27,3 +27,48 @@
 	"Crabmeat.h"
 	<iostream>
 
+1463930303 source:/home/thiago/TeM/Jogo06/Crabmeat.cpp
+	"Crabmeat.h"
+
+1463930355 /home/thiago/TeM/Jogo06/Crabmeat.h
+	"GerenciadorGrafico.h"
+
+1463921142 /home/thiago/TeM/Jogo06/GerenciadorGrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<iostream>
+
+1463921434 source:/home/thiago/TeM/Jogo06/GerenciadorGrafico.cpp
+	"GerenciadorGrafico.h"
+
+1463931081 source:/home/thiago/TeM/Jogo06/Jogador.cpp
+	"Jogador.h"
+
+1463930956 /home/thiago/TeM/Jogo06/Jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1463931478 source:/home/thiago/TeM/Jogo06/main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	"Crabmeat.h"
+	"GerenciadorArquivo.h"
+	<iostream>
+
+1463932621 source:/home/thiago/TeM/Jogo06/GerenciadorArquivo.cpp
+	"GerenciadorArquivo.h"
+
+1463930491 /home/thiago/TeM/Jogo06/GerenciadorArquivo.h
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<string>
+	"Jogador.h"
+	"Crabmeat.h"
+

@@ -8,6 +8,11 @@
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
+
+#include <iostream>
+
 class GerenciadorGrafico
 {
 private:
@@ -18,6 +23,7 @@ private:
     ALLEGRO_EVENT_QUEUE *FilaEventos; // ATRIBUTO REFERENTE AO PONTEIRO DA FILA DE EVENTOS
     ALLEGRO_DISPLAY *display; // ATRIBUTO REFERENTE AO PONTEIRO DO DISPLAY
     ALLEGRO_TIMER *timer; // ATRIBUTO REFERENTE AO PONTEIRO DO TIMER
+    ALLEGRO_FONT *fonte;
 
 public:
     // CONSTRUTORA DA CLASSE GERENCIADORGRAFICO
@@ -61,6 +67,9 @@ public:
 
     // PERGUNTAR AO PROFESSOR
     void DestroiTudo();
+
+    void CriaFonte();
+    void Pause(int o);
 
 };
 

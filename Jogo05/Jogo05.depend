@@ -20,3 +20,24 @@
 	"Jogador.h"
 	<iostream>
 
+1463878402 source:/home/thiago/TeM/Jogo05/GerenciadorGrafico.cpp
+	"GerenciadorGrafico.h"
+
+1463878402 /home/thiago/TeM/Jogo05/GerenciadorGrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+
+1463878402 source:/home/thiago/TeM/Jogo05/Jogador.cpp
+	"Jogador.h"
+
+1463878402 /home/thiago/TeM/Jogo05/Jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1463878402 source:/home/thiago/TeM/Jogo05/main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	<iostream>
+
