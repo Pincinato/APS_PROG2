@@ -10,6 +10,7 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 
+#define DEBUG 1
 
 using namespace std;
 
@@ -17,6 +18,7 @@ int main()
 {
 
  ///teste audio por sample
+ /*
  ALLEGRO_SAMPLE *sample = NULL;
     if (!al_install_audio())
     {
@@ -43,6 +45,7 @@ int main()
     }
     al_play_sample(sample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
     ///
+ */
     ///fim de teste
 
 
@@ -51,10 +54,13 @@ int main()
 
 
 
-
+    if(DEBUG==1){printf("Criando objeto Gerenciador \n");}
     GerenciadorGrafico Gerenciador;
+    if(DEBUG==1){printf("Criando jogador \n ");}
     Jogador Player1;
+    if(DEBUG==1){printf("Criando Inimigo \n");}
     Crabmeat Enemy1;
+    if(DEBUG==1){printf("Criando arquivo \n");}
     GerenciadorArquivo arquivo;
 
     /// ----------VARIÁVEIS DO JOGO----------
@@ -72,7 +78,9 @@ int main()
     // al_hide_mouse_cursor(display);
 
     /// teste para carregar os elementos
+    if(DEBUG==1){printf("Carregando Inimigo \n ");}
     arquivo.Load_Inimigo(&Enemy1);
+    if(DEBUG==1){printf("Carregando Jogador \n");}
     arquivo.Load_Jogador(&Player1);
     ///
     while(!fim)
@@ -201,9 +209,9 @@ int main()
             cout << "Jogador: x = " << Player1.GetX() << endl;
             cout << "Inimigo: x = " << Enemy1.GetX() << endl;
             }
-            if(Player1.GetposX() > (Enemy1.GetposX()-al_get_bitmap_width(Enemy1.GetBitmap())/2 )&& Player1.GetposX() < (Enemy1.GetposX() +al_get_bitmap_width(Enemy1.GetBitmap())/2) )
+            if(Player1.GetposX() > (Enemy1.GetX()-al_get_bitmap_width(Enemy1.GetBitmap())/2 )&& Player1.GetX() < (Enemy1.GetX() +al_get_bitmap_width(Enemy1.GetBitmap())/2) )
             {
-                if(Player1.GetposY() < (Enemy1.GetposY()+al_get_bitmap_height(Enemy1.GetBitmap())/2 ))
+                if(Player1.GetposY() < (Enemy1.GetY()+al_get_bitmap_height(Enemy1.GetBitmap())/2 ))
                 printf("Colidiu \n");
             }
             Player1.SetSources(botaoprecionado);
@@ -229,7 +237,7 @@ int main()
     Player1.DestroiTudo();
     Enemy1.DestroiTudo();
     Gerenciador.DestroiTudo();
-    al_destroy_sample(sample);
+//    al_destroy_sample(sample);
 
     return 0;
 }

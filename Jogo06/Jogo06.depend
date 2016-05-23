@@ -27,11 +27,12 @@
 	"Crabmeat.h"
 	<iostream>
 
-1463935876 source:/home/thiago/TeM/Jogo06/Crabmeat.cpp
+1464025620 source:/home/thiago/TeM/Jogo06/Crabmeat.cpp
 	"Crabmeat.h"
 
-1463935888 /home/thiago/TeM/Jogo06/Crabmeat.h
+1464025345 /home/thiago/TeM/Jogo06/Crabmeat.h
 	"GerenciadorGrafico.h"
+	"Inimigo.h"
 
 1463921142 /home/thiago/TeM/Jogo06/GerenciadorGrafico.h
 	<allegro5/allegro.h>
@@ -52,7 +53,7 @@
 	"GerenciadorGrafico.h"
 	<iostream>
 
-1463939193 source:/home/thiago/TeM/Jogo06/main.cpp
+1464025547 source:/home/thiago/TeM/Jogo06/main.cpp
 	"GerenciadorGrafico.h"
 	"Jogador.h"
 	"Crabmeat.h"
@@ -61,10 +62,10 @@
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 
-1463932621 source:/home/thiago/TeM/Jogo06/GerenciadorArquivo.cpp
+1464025137 source:/home/thiago/TeM/Jogo06/GerenciadorArquivo.cpp
 	"GerenciadorArquivo.h"
 
-1463930491 /home/thiago/TeM/Jogo06/GerenciadorArquivo.h
+1464025162 /home/thiago/TeM/Jogo06/GerenciadorArquivo.h
 	<stdio.h>
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
@@ -73,4 +74,10 @@
 	<string>
 	"Jogador.h"
 	"Crabmeat.h"
+
+1464025824 source:/home/thiago/TeM/Jogo06/src/Inimigo.cpp
+	"Inimigo.h"
+
+1464025752 /home/thiago/TeM/Jogo06/include/Inimigo.h
+	<string>
 

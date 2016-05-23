@@ -1,7 +1,7 @@
 #include "Crabmeat.h"
 
 // CONSTRUTORA DA CLASSE CRABMEAT
-Crabmeat::Crabmeat()
+Crabmeat::Crabmeat():Inimigo()
 {
     crabmeat = NULL;
     posx = posxo;
@@ -10,6 +10,9 @@ Crabmeat::Crabmeat()
     sourceY = 0;
     direcao = 1;
     delay = false;
+    char *name;
+    //strcpy(name,"Inimigo-Crabmeat \n");
+   // Set_Name(name);
 
     CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
 }
@@ -32,22 +35,10 @@ float Crabmeat::GetX()
     return posx;
 }
 
-int Crabmeat::GetposX(){
-
-    return posx;
-}
-
-int Crabmeat::GetposY(){
-
+float Crabmeat::GetY()
+{
     return posy;
 }
-
-void Crabmeat::SetposX(int x){
-
-    posx=x;
-
-}
-
 // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
 void Crabmeat::SetX()
 {

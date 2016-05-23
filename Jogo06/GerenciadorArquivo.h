@@ -36,10 +36,9 @@ public:
     /*Fase*/ void Load_jogo();
     int Salva_Jogador(Jogador j);
     void Load_Jogador(Jogador *j);
-    ///int Salva_Inimigo(Inimigo *i);
-    ///void Load_Inimigo(Inimigo *i);
-    int Salva_Inimigo(Crabmeat *i);
-    void Load_Inimigo(Crabmeat *i);
+    int Salva_Inimigo(Inimigo *i);
+    void Load_Inimigo(Inimigo *i);
+
 };
 
 #endif // GERENCIADORGRAFICO_H_INCLUDED

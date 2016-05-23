@@ -3,14 +3,14 @@
 #ifndef CRABMEAT_H_INCLUDED
 #define CRABMEAT_H_INCLUDED
 #include "GerenciadorGrafico.h"
+#include "Inimigo.h"
 
-class Crabmeat
+class Crabmeat:public Inimigo
 {
 private:
     ALLEGRO_BITMAP *crabmeat; // ATRIBUTO REFERENTE AO PONTEIRO DOS SPRITES DO INIMIGO CRABMEAT
 
-    float posx; // ATRIBUTO REFERENTE A COORDENADA X DA POSICAO DO INIMIGO CRABMEAT
-    float posy; // ATRIBUTO REFERENTE A COORDENADA Y DA POSICAO DO INIMIGO CRABMEAT
+     // ATRIBUTO REFERENTE A COORDENADA Y DA POSICAO DO INIMIGO CRABMEAT
     const float posxo = 400; // ATRIBUTO REFERENTE A COORDENADA X INICIAL DA POSICAO DO INIMIGO CRABMEAT
     const float velocidade = 1.0;
     int sourceX; // ATRIBUTO AUXILIAR PARA DESENHAR
@@ -30,6 +30,7 @@ public:
 
     // METODO PARA OBTER A COORDENADA X DA POSICAO DO PERSONAGEM
     float GetX();
+    float GetY();
 
     int GetposX();
     int GetposY();

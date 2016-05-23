@@ -28,6 +28,18 @@
 					<Add library="../../../../usr/lib/liballegro_physfs.so" />
 					<Add library="../../../../usr/lib/liballegro_primitives.so" />
 					<Add library="../../../../usr/lib/liballegro_ttf.so" />
+					<Add library="../../../../usr/lib/libbfd-2.25-system.so" />
+					<Add library="../../../../usr/lib/libchromeXvMC.so" />
+					<Add library="../../../../usr/lib/libchromeXvMCPro.so" />
+					<Add library="../../../../usr/lib/libgettextlib-0.19.2.so" />
+					<Add library="../../../../usr/lib/libgettextsrc-0.19.2.so" />
+					<Add library="../../../../usr/lib/libinproctrace.so" />
+					<Add library="../../../../usr/lib/libopcodes-2.25-system.so" />
+					<Add library="../../../../usr/lib/libpulsecore-6.0.so" />
+					<Add library="../../../../usr/lib/libspreadsheet.so" />
+					<Add library="../../../../usr/lib/libspreadsheet-1.12.18.so" />
+					<Add library="../../../../usr/lib/libtidy.so" />
+					<Add library="../../../../usr/lib/preloadable_libintl.so" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -49,6 +61,8 @@
 		</Compiler>
 		<Unit filename="Crabmeat.cpp" />
 		<Unit filename="Crabmeat.h" />
+		<Unit filename="GerenciadorArquivo.cpp" />
+		<Unit filename="GerenciadorArquivo.h" />
 		<Unit filename="GerenciadorGrafico.cpp" />
 		<Unit filename="GerenciadorGrafico.h" />
 		<Unit filename="Jogador.cpp" />
