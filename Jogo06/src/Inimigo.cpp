@@ -31,7 +31,7 @@ void Inimigo::Set_Name(std::string n){
 
  name.clear();
  name.append(n);
- name.append(0);
+ name.append("\0");
 }
 
 void Inimigo::SetposX(const int x){

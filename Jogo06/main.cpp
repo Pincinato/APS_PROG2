@@ -46,13 +46,7 @@ int main()
     al_play_sample(sample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
     ///
  */
-    ///fim de teste
-
-
-
-
-
-
+    ///fim de teste audio
 
     if(DEBUG==1){printf("Criando objeto Gerenciador \n");}
     GerenciadorGrafico Gerenciador;
@@ -67,6 +61,8 @@ int main()
     bool fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
     bool botaoprecionado = false; // ATRIBUTO AUXILIAR PARA IDENTIFICAR SE UMA TECLA ESTA PRECIONADA
     bool system_pause= false;
+    bool escolha=false;
+    bool load=false;
     int opcao_pause =0;
     int enable_pause=0;
     /// ----------LOOP PRINCIPAL----------
@@ -77,16 +73,59 @@ int main()
     // ESCONDENDO O CURSOR DO MOUSE
     // al_hide_mouse_cursor(display);
 
+    // CRIANDO UM EVENTO
+    ALLEGRO_EVENT ev;
+
+
+/// Testa da tela inicial
+
+    int tel_ini=0;
+    Gerenciador.Tela_inicial(0);
+    while(!escolha){
+        al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
+        if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+        {
+        switch(ev.keyboard.keycode){
+            case ALLEGRO_KEY_RIGHT:
+            tel_ini++;
+            if(tel_ini>=3)
+                tel_ini=0;
+            Gerenciador.Tela_inicial(tel_ini);
+            break;
+            case ALLEGRO_KEY_ENTER:
+                if(tel_ini==0)
+                {
+                 escolha=true;
+                }
+                else if(tel_ini==1)
+                {
+                 load=true;
+                 escolha=true;
+                }
+                else if(tel_ini==2)
+                {
+                 escolha=true;
+                 fim=true;
+                }
+            break;
+           }
+
+        }
+    }
+
+
+/// fim de teste tela pinicial
+
     /// teste para carregar os elementos
-    if(DEBUG==1){printf("Carregando Inimigo \n ");}
-    arquivo.Load_Inimigo(&Enemy1);
-    if(DEBUG==1){printf("Carregando Jogador \n");}
-    arquivo.Load_Jogador(&Player1);
+    if(load==true){
+        if(DEBUG==1){printf("Carregando Inimigo \n ");}
+        arquivo.Load_Inimigo(&Enemy1);
+        if(DEBUG==1){printf("Carregando Jogador \n");}
+        arquivo.Load_Jogador(&Player1);
+    }
     ///
     while(!fim)
     {
-        // CRIANDO UM EVENTO
-        ALLEGRO_EVENT ev;
         system_pause=false;
 
         // AGUARDANDO UM EVENTO ACONTECER

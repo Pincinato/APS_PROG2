@@ -10,9 +10,12 @@ Crabmeat::Crabmeat():Inimigo()
     sourceY = 0;
     direcao = 1;
     delay = false;
-    char *name;
+    std::string n;
+    n.clear();
+    n.append("Inimigo-Crabmeat \n");
+    n.append("\0");
     //strcpy(name,"Inimigo-Crabmeat \n");
-   // Set_Name(name);
+    Set_Name(n);
 
     CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
 }

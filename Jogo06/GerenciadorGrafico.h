@@ -24,6 +24,7 @@ private:
     ALLEGRO_DISPLAY *display; // ATRIBUTO REFERENTE AO PONTEIRO DO DISPLAY
     ALLEGRO_TIMER *timer; // ATRIBUTO REFERENTE AO PONTEIRO DO TIMER
     ALLEGRO_FONT *fonte;
+    ALLEGRO_BITMAP *tela_inicial;
 
 public:
     // CONSTRUTORA DA CLASSE GERENCIADORGRAFICO
@@ -70,6 +71,9 @@ public:
 
     void CriaFonte();
     void Pause(int o);
+    void Tela_inicial(int o);
+    void Tela_escolhe_jogador();
+
 
 };
 

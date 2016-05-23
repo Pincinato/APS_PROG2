@@ -154,3 +154,22 @@ void GerenciadorGrafico::Pause(int o){
     }
     al_flip_display();
 }
+
+void GerenciadorGrafico::Tela_inicial(int o){
+
+    tela_inicial=al_load_bitmap("/home/thiago/TeM/Abertura.bmp");
+    al_draw_bitmap(tela_inicial,10,10,0);
+    switch(o){
+    case 0:
+    al_draw_text(fonte, al_map_rgb(255, 255, 255), 150 , 150, ALLEGRO_ALIGN_CENTRE,"Novo jogo");
+    break;
+    case 1:
+    al_draw_text(fonte, al_map_rgb(255, 255, 255), 150 , 150, ALLEGRO_ALIGN_CENTRE,"Continuar");
+    break;
+    case 2:
+    al_draw_text(fonte, al_map_rgb(255, 255, 255), 150 , 150, ALLEGRO_ALIGN_CENTRE,"Sair");
+    break;
+    }
+    al_flip_display();
+
+}
