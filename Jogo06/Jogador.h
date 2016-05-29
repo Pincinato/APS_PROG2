@@ -53,6 +53,9 @@ public:
 
     // PERGUNTAR PARA O PROFESSOR
     void DestroiTudo();
+    void Pulando();
+    void Caindo();
+    void SetposY(const int y);
 };
 
 #endif // JOGADOR_H_INCLUDED

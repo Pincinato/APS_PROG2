@@ -11,15 +11,16 @@
 #include <allegro5/allegro_acodec.h>
 
 #define DEBUG 1
-
+#define AUDIO 0
 using namespace std;
 
 int main()
 {
 
  ///teste audio por sample
- /*
  ALLEGRO_SAMPLE *sample = NULL;
+ if(AUDIO==1){
+
     if (!al_install_audio())
     {
         fprintf(stderr, "Falha ao inicializar áudio.\n");
@@ -45,17 +46,23 @@ int main()
     }
     al_play_sample(sample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
     ///
- */
+ }
     ///fim de teste audio
 
     if(DEBUG==1){printf("Criando objeto Gerenciador \n");}
     GerenciadorGrafico Gerenciador;
     if(DEBUG==1){printf("Criando jogador \n ");}
     Jogador Player1;
-    if(DEBUG==1){printf("Criando Inimigo \n");}
+    if(DEBUG==1){printf("Criando Inimigos \n");}
     Crabmeat Enemy1;
+    Crabmeat Enemy2;
+    for(int k ; k<125;k++)
+    {
+        Enemy2.SetX();
+    }
     if(DEBUG==1){printf("Criando arquivo \n");}
     GerenciadorArquivo arquivo;
+    if(DEBUG==1){printf(" 1-id= %d \n 2-id= %d \n",Enemy1.GetId(),Enemy2.GetId());}
 
     /// ----------VARIÁVEIS DO JOGO----------
     bool fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
@@ -65,6 +72,7 @@ int main()
     bool load=false;
     int opcao_pause =0;
     int enable_pause=0;
+    bool block_teclado =0;
     /// ----------LOOP PRINCIPAL----------
     // INICIANDO O CONTADOR
     al_start_timer(Gerenciador.GetTimer());
@@ -116,10 +124,19 @@ int main()
 
 /// fim de teste tela pinicial
 
+///teste pular
+
+    int pulo=0;
+    bool pulando=false;
+
+///fim do teste pular
+
     /// teste para carregar os elementos
     if(load==true){
         if(DEBUG==1){printf("Carregando Inimigo \n ");}
         arquivo.Load_Inimigo(&Enemy1);
+        if(DEBUG==1){printf("Carregando Inimigo \n ");}
+        arquivo.Load_Inimigo(&Enemy2);
         if(DEBUG==1){printf("Carregando Jogador \n");}
         arquivo.Load_Jogador(&Player1);
     }
@@ -145,8 +162,8 @@ int main()
             {
             case ALLEGRO_KEY_UP:
                 Player1.SetDirecao(CIMA);
+                pulando=true;
                 break;
-
             case ALLEGRO_KEY_DOWN:
                 Player1.SetDirecao(BAIXO);
                 break;
@@ -199,6 +216,7 @@ int main()
                             arquivo.Salva_jogo();
                             arquivo.Salva_Jogador(Player1);
                             arquivo.Salva_Inimigo(&Enemy1);
+                            arquivo.Salva_Inimigo(&Enemy2);
                         break;
                         case 2:
                             system_pause=true;
@@ -231,6 +249,8 @@ int main()
         if(ev.type == ALLEGRO_EVENT_KEY_UP)
         {
             botaoprecionado = false;
+            pulando =false;
+
         }
 
         else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
@@ -247,6 +267,7 @@ int main()
 
             cout << "Jogador: x = " << Player1.GetX() << endl;
             cout << "Inimigo: x = " << Enemy1.GetX() << endl;
+            cout << "Inimigo: x = " << Enemy2.GetX() << endl;
             }
             if(Player1.GetposX() > (Enemy1.GetX()-al_get_bitmap_width(Enemy1.GetBitmap())/2 )&& Player1.GetX() < (Enemy1.GetX() +al_get_bitmap_width(Enemy1.GetBitmap())/2) )
             {
@@ -256,15 +277,34 @@ int main()
             Player1.SetSources(botaoprecionado);
             Enemy1.SetX();
             Enemy1.SetSources();
+            Enemy2.SetX();
+            Enemy2.SetSources();
         }
 
         /// ----------DESENHO----------
 
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
+        /// contorle de pulo
+        if(pulando){
+            if (pulo<1000){
+                Player1.Pulando();
+            }
+            else if(pulo>=1000 && pulo<2000)
+                {
+                Player1.Caindo();
+            }
+            else if(pulo >=2000)
+            {
+             pulando =0;
+             pulo=-10;
+            }
+        pulo=pulo+10;
+        }
+        ///
         Player1.DesenhaJogador();
         Enemy1.DesenhaPersonagem();
-
+        Enemy2.DesenhaPersonagem();
         // DUPLO BUFFER
         al_flip_display();
 
@@ -273,10 +313,11 @@ int main()
     }
 
     // PERGUNTAR AO PROFESSOR
+    printf("Posição do jogador em Y %d \n",Player1.GetposY());
     Player1.DestroiTudo();
     Enemy1.DestroiTudo();
+    Enemy2.DestroiTudo();
     Gerenciador.DestroiTudo();
-//    al_destroy_sample(sample);
-
+    al_destroy_sample(sample);
     return 0;
 }

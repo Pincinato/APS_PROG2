@@ -36,12 +36,18 @@ void GerenciadorArquivo::Load_Inimigo(Inimigo *i){
     printf("Carregando dados do inimigo \n");
     arquivo = fopen("Arquivo_Teste.txt","r");
     std::string info_inimigo;
-    std::string name;
+    std::string name_inimigo;
+    std::string id_inimigo;
     char aux;
+    name_inimigo= i->Get_Name();
+    id_inimigo=to_string(i->GetId());
+    name_inimigo.append(id_inimigo);
+    name_inimigo.append("\n");
+    name_inimigo.append("\0");
     do{
     if(fgets(&info_inimigo[0],100,arquivo) != "\n"){}
      printf("%s",&info_inimigo[0]);
-    }while(strcmp(&info_inimigo[0],i->Get_Name())!=0 &&  strcmp(&info_inimigo[0],"EOF")!=0 );
+    }while(strcmp(&info_inimigo[0],&name_inimigo[0])!=0 &&  strcmp(&info_inimigo[0],"EOF")!=0 );
     fscanf(arquivo,"%s",&info_inimigo[0]);
     //info_inimigo.erase(0);
     printf("ultima posicao do inimigo %s \n",&info_inimigo[0]);
@@ -86,14 +92,21 @@ int GerenciadorArquivo::Salva_Inimigo(Inimigo *i){
     printf("Salvando inimigo\n");
     arquivo = fopen("Arquivo_Teste.txt","a");
     std:: string info_inimigo;
+    std:: string name_inmigo;
+    std::string id_inimigo;
     printf("Pegando dados da posicao x \n");
     info_inimigo = to_string(i->GetposX());
     printf("cat /n \n");
     info_inimigo.append("\n");
     printf("cat com 0 \n");
     info_inimigo.append("\0");
+    name_inmigo= i->Get_Name();
+    id_inimigo=to_string(i->GetId());
+    name_inmigo.append(id_inimigo);
+    name_inmigo.append("\n");
+    name_inmigo.append("\0");
     printf("escrevendo no arquivo \n");
-    fprintf(arquivo,i->Get_Name());
+    fprintf(arquivo,&name_inmigo[0]);
     fprintf(arquivo,"%s",&info_inimigo[0]);
     printf("Fechando o arquivo \n");
     fclose(arquivo);

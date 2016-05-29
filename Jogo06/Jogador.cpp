@@ -108,3 +108,18 @@ void Jogador::DestroiTudo()
 {
     al_destroy_bitmap(Sonic);
 }
+
+void Jogador::Pulando(){
+
+    SetposY(posy-1);
+}
+
+void Jogador::Caindo(){
+
+    SetposY(posy+1);
+}
+
+void Jogador::SetposY(const int y){
+
+    posy=y;
+}

@@ -4,6 +4,8 @@
 Inimigo::Inimigo()
 {
     //ctor
+    id++;
+     myId=id;
 }
 
 Inimigo::~Inimigo()
@@ -27,6 +29,11 @@ const int Inimigo::GetposY(){
  return posy;
 }
 
+const int Inimigo::GetId(){
+
+ return myId;
+}
+
 void Inimigo::Set_Name(std::string n){
 
  name.clear();
@@ -44,3 +51,4 @@ void Inimigo::SetposY(const int y){
     posy=y;
 
 }
+int Inimigo::id=0;
