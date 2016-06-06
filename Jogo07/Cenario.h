@@ -1,0 +1,42 @@
+#ifndef CENARIO_H_INCLUDED
+#define CENARIO_H_INCLUDED
+#include "GerenciadorGrafico.h"
+
+class Cenario
+{
+private:
+    ALLEGRO_BITMAP *cenario; // ATRIBUTO REFERENTE AO PONTEIRO DA IMAGEM DO CENARIO
+
+    int posx; // ATRIBUTO REFERENTE A COORDENADA X DA POSICAO DO PERSONAGEM
+    int direcao; // ATRIBUTO REFERENTE AS DIRECOES
+
+public:
+    // CONSTRUTORA DA CLASSE CENARIO
+    Cenario(int x);
+
+    // CONSTRUTORA SEM PARAMETROS DA CLASSE CENARIO
+    Cenario();
+
+    // DESTRUTORA DA CLASSE CENARIO
+    ~Cenario();
+
+    // METODO PARA CARREGAR A IMAGEM DO CENARIO
+    void CarregaImagem();
+
+    // METODO PARA OBTER A COORDENADA X DA POSICAO DO CENARIO
+    int GetX();
+
+    // METODO PARA ALTERAR A DIRECAO
+    void SetDirecao(int Direcao);
+
+    // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO CENARIO
+    void SetX();
+
+    // METODO PARA DESENHAR O CENARIO
+    void DesenhaCenario();
+
+    // PERGUNTAR PARA O PROFESSOR
+    void DestroiTudo();
+};
+
+#endif // CENARIO_H_INCLUDED

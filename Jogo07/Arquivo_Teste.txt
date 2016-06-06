@@ -1,0 +1,4 @@
+Jogador 
+100
+Inimigo-Crabmeat 
+0

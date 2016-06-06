@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1464820141 source:c:\users\user\desktop\jogo07\crabmeat.cpp
+	"Crabmeat.h"
+
+1464698806 c:\users\user\desktop\jogo07\crabmeat.h
+	"GerenciadorGrafico.h"
+	"Inimigo.h"
+
+1464698706 c:\users\user\desktop\jogo07\gerenciadorgrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<iostream>
+
+1464698706 c:\users\user\desktop\jogo07\inimigo.h
+	<string>
+
+1464698706 source:c:\users\user\desktop\jogo07\gerenciadorarquivo.cpp
+	"GerenciadorArquivo.h"
+	<string.h>
+	<cstdlib>
+	<stdlib.h>
+
+1464698706 c:\users\user\desktop\jogo07\gerenciadorarquivo.h
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<string>
+	"Jogador.h"
+	"Crabmeat.h"
+
+1464698706 c:\users\user\desktop\jogo07\jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1464719290 source:c:\users\user\desktop\jogo07\gerenciadorgrafico.cpp
+	"GerenciadorGrafico.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1464698706 source:c:\users\user\desktop\jogo07\inimigo.cpp
+	"Inimigo.h"
+
+1464987441 source:c:\users\user\desktop\jogo07\cenario.cpp
+	"Cenario.h"
+
+1464898682 c:\users\user\desktop\jogo07\cenario.h
+	"GerenciadorGrafico.h"
+
+1464898377 source:c:\users\user\desktop\jogo07\jogador.cpp
+	"Jogador.h"
+
+1464987441 source:c:\users\user\desktop\jogo07\main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	"Crabmeat.h"
+	"GerenciadorArquivo.h"
+	"Cenario.h"
+	<iostream>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+
