@@ -1,0 +1,83 @@
+# depslib dependency file v1.0
+1463775389 source:c:\users\user\desktop\programação\jogo06\crabmeat.cpp
+	"Crabmeat.h"
+
+1463775284 c:\users\user\desktop\programação\jogo06\crabmeat.h
+	"GerenciadorGrafico.h"
+
+1463775586 c:\users\user\desktop\programação\jogo06\gerenciadorgrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+
+1463674166 source:c:\users\user\desktop\programação\jogo06\gerenciadorgrafico.cpp
+	"GerenciadorGrafico.h"
+
+1463744302 source:c:\users\user\desktop\programação\jogo06\jogador.cpp
+	"Jogador.h"
+
+1463756821 c:\users\user\desktop\programação\jogo06\jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1463775826 source:c:\users\user\desktop\programação\jogo06\main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	"Crabmeat.h"
+	<iostream>
+
+1464530314 source:/home/thiago/TeM/Jogo06/Crabmeat.cpp
+	"Crabmeat.h"
+
+1464034417 /home/thiago/TeM/Jogo06/Crabmeat.h
+	"GerenciadorGrafico.h"
+	"Inimigo.h"
+
+1464032530 /home/thiago/TeM/Jogo06/GerenciadorGrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<iostream>
+
+1464033217 source:/home/thiago/TeM/Jogo06/GerenciadorGrafico.cpp
+	"GerenciadorGrafico.h"
+
+1464987847 source:/home/thiago/TeM/Jogo06/Jogador.cpp
+	"Jogador.h"
+
+1464987281 /home/thiago/TeM/Jogo06/Jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1464992643 source:/home/thiago/TeM/Jogo06/main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	"Crabmeat.h"
+	"GerenciadorArquivo.h"
+	<iostream>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+
+1464987827 source:/home/thiago/TeM/Jogo06/GerenciadorArquivo.cpp
+	"GerenciadorArquivo.h"
+
+1464025162 /home/thiago/TeM/Jogo06/GerenciadorArquivo.h
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<string>
+	"Jogador.h"
+	"Crabmeat.h"
+
+1464529213 source:/home/thiago/TeM/Jogo06/src/Inimigo.cpp
+	"Inimigo.h"
+
+1464528943 /home/thiago/TeM/Jogo06/include/Inimigo.h
+	<string>
+

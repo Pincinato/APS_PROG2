@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1463629446 source:c:\users\user\desktop\jogo04\gerenciadorgrafico.cpp
+	"GerenciadorGrafico.h"
+
+1463630554 c:\users\user\desktop\jogo04\gerenciadorgrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+
+1463637631 source:c:\users\user\desktop\jogo04\jogador.cpp
+	"Jogador.h"
+
+1463634420 c:\users\user\desktop\jogo04\jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1463640289 source:c:\users\user\desktop\jogo04\main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	<iostream>
+
+1463867569 source:/home/thiago/TeM/Jogo04/GerenciadorGrafico.cpp
+	"GerenciadorGrafico.h"
+
+1463867569 /home/thiago/TeM/Jogo04/GerenciadorGrafico.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+
+1463878080 source:/home/thiago/TeM/Jogo04/Jogador.cpp
+	"Jogador.h"
+
+1463878080 /home/thiago/TeM/Jogo04/Jogador.h
+	"GerenciadorGrafico.h"
+	<iostream>
+
+1463878109 source:/home/thiago/TeM/Jogo04/main.cpp
+	"GerenciadorGrafico.h"
+	"Jogador.h"
+	"GerenciadorArquivo.h"
+	<iostream>
+
+1463877550 /home/thiago/TeM/Jogo04/GerenciadorArquivo.h
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<string>
+	"Jogador.h"
+
+1463878091 source:/home/thiago/TeM/Jogo04/GerenciadorArquivo.cpp
+	"GerenciadorArquivo.h"
+
