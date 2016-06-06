@@ -9,7 +9,8 @@ Jogador::Jogador()
     direcao = DIREITA;
     sourceX = 104;
     sourceY = 0;
-
+    id++;
+    myId=id;
     CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
 }
 
@@ -123,3 +124,10 @@ void Jogador::SetposY(const int y){
 
     posy=y;
 }
+
+const int Jogador::GetId(){
+
+    return myId;
+}
+
+int Jogador::id=0;

@@ -21,7 +21,8 @@ private:
     int direcao; // ATRIBUTO REFERENTE AS DIRECOES
     int sourceX; // ATRIBUTO AUXILIAR PARA DESENHAR
     int sourceY; // ATRIBUTO AUXILIAR PARA DESENHAR
-
+    static int id;
+    int myId;
 public:
     // CONSTRUTORA DA CLASSE JOGADOR
     Jogador();
@@ -29,6 +30,7 @@ public:
     // DESTRUTORA DA CLASSE JOGADOR
     ~Jogador();
 
+    const int GetId();
     // METODO PARA CARREGAR AS IMAGENS DO PERSONAGEM
     void CarregaImagem();
 

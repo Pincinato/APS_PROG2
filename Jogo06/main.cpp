@@ -11,7 +11,7 @@
 #include <allegro5/allegro_acodec.h>
 
 #define DEBUG 1
-#define AUDIO 0
+#define AUDIO 1
 using namespace std;
 
 int main()
@@ -51,14 +51,19 @@ int main()
 
     if(DEBUG==1){printf("Criando objeto Gerenciador \n");}
     GerenciadorGrafico Gerenciador;
-    if(DEBUG==1){printf("Criando jogador \n ");}
+    if(DEBUG==1){printf("Criando jogadores \n ");}
     Jogador Player1;
+    Jogador Player2;
     if(DEBUG==1){printf("Criando Inimigos \n");}
     Crabmeat Enemy1;
     Crabmeat Enemy2;
-    for(int k ; k<125;k++)
+    for(int k=0 ; k<125;k++)
     {
         Enemy2.SetX();
+    }
+    for(int k=0;k<125;k++)
+    {
+        Player2.SetX();
     }
     if(DEBUG==1){printf("Criando arquivo \n");}
     GerenciadorArquivo arquivo;
@@ -139,6 +144,7 @@ int main()
         arquivo.Load_Inimigo(&Enemy2);
         if(DEBUG==1){printf("Carregando Jogador \n");}
         arquivo.Load_Jogador(&Player1);
+        arquivo.Load_Jogador(&Player2);
     }
     ///
     while(!fim)
@@ -215,6 +221,7 @@ int main()
                         case 1:
                             arquivo.Salva_jogo();
                             arquivo.Salva_Jogador(Player1);
+                            arquivo.Salva_Jogador(Player2);
                             arquivo.Salva_Inimigo(&Enemy1);
                             arquivo.Salva_Inimigo(&Enemy2);
                         break;
@@ -264,10 +271,11 @@ int main()
             {
                 if(ALLEGRO_KEY_RIGHT || ALLEGRO_KEY_LEFT)
                     Player1.SetX();
-
+                    Player2.SetX();
             cout << "Jogador: x = " << Player1.GetX() << endl;
+            cout << "Jogador 2: x = " << Player1.GetX() << endl;
             cout << "Inimigo: x = " << Enemy1.GetX() << endl;
-            cout << "Inimigo: x = " << Enemy2.GetX() << endl;
+            cout << "Inimigo 2: x = " << Enemy2.GetX() << endl;
             }
             if(Player1.GetposX() > (Enemy1.GetX()-al_get_bitmap_width(Enemy1.GetBitmap())/2 )&& Player1.GetX() < (Enemy1.GetX() +al_get_bitmap_width(Enemy1.GetBitmap())/2) )
             {
@@ -275,6 +283,7 @@ int main()
                 printf("Colidiu \n");
             }
             Player1.SetSources(botaoprecionado);
+            Player2.SetSources(botaoprecionado);
             Enemy1.SetX();
             Enemy1.SetSources();
             Enemy2.SetX();
@@ -303,6 +312,7 @@ int main()
         }
         ///
         Player1.DesenhaJogador();
+        Player2.DesenhaJogador();
         Enemy1.DesenhaPersonagem();
         Enemy2.DesenhaPersonagem();
         // DUPLO BUFFER
@@ -315,6 +325,7 @@ int main()
     // PERGUNTAR AO PROFESSOR
     printf("Posição do jogador em Y %d \n",Player1.GetposY());
     Player1.DestroiTudo();
+    Player2.DestroiTudo();
     Enemy1.DestroiTudo();
     Enemy2.DestroiTudo();
     Gerenciador.DestroiTudo();
