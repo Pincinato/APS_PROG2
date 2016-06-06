@@ -1,8 +1,8 @@
 Jogador1
-0
+127
 Jogador2
-2636
+317
 Inimigo-Crabmeat1
-448
+464
 Inimigo-Crabmeat2
-483
+511
