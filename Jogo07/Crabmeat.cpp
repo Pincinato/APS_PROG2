@@ -1,4 +1,5 @@
 #include "Crabmeat.h"
+#include <stdio.h>
 
 // CONSTRUTORA DA CLASSE CRABMEAT
 Crabmeat::Crabmeat():Inimigo()
@@ -14,6 +15,7 @@ Crabmeat::Crabmeat():Inimigo()
     n.clear();
     n.append("Inimigo-Crabmeat \n");
     n.append("\0");
+    control_posx=0;
     //strcpy(name,"Inimigo-Crabmeat \n");
     Set_Name(n);
 
@@ -29,7 +31,7 @@ Crabmeat::~Crabmeat()
 // METODO PARA CARREGAR AS IMAGENS DO PERSONAGEM
 void Crabmeat::CarregaImagem()
 {
-    crabmeat = al_load_bitmap("Imagens/Crabmeat.png");
+    crabmeat = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Crabmeat.png");
 }
 
 // METODO PARA OBTER A COORDENADA X DA POSICAO DO PERSONAGEM
@@ -46,13 +48,13 @@ float Crabmeat::GetY()
 // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
 void Crabmeat::SetX()
 {
-    if(posx == posxo)
+ /*  if(posx <= posxo)
     {
         direcao = 1;
         delay = true;
     }
 
-    if(posx == posxo + 150)
+    if(posx >= posxo + 150)
     {
         direcao = -1;
         delay = true;
@@ -60,6 +62,24 @@ void Crabmeat::SetX()
 
     posx += direcao * velocidade;
     delay = false;
+    */
+   printf(" Posicao posxo = %d \n",posxo);
+   printf(" Posicao posx = %d \n",posx);
+   printf(" Velocidade= %d \n",velocidade);
+   printf(" Control = %d \n",control_posx);
+   if(control_posx<deslocamento/2)
+   {
+    posx=posx-1*velocidade;
+    control_posx++;
+   }
+   else if( control_posx>=deslocamento/2){
+    posx=posx+1*velocidade;
+    control_posx++;
+     if(control_posx==deslocamento+1){
+      control_posx=0;
+      }
+    }
+    printf("Posicao posx %d \n",posx);
 }
 
 // METODO PARA ALTERAR O SENTIDO DA IMAGEM
@@ -98,4 +118,24 @@ void Crabmeat::DesenhaPersonagem()
 void Crabmeat::DestroiTudo()
 {
    al_destroy_bitmap(crabmeat);
+}
+
+void Crabmeat::Ajusteposx()
+{
+ if(direcao==0)
+    {
+    posx=posx-2;
+    printf("Player frente \n");
+    }
+ if(direcao==1)
+ {
+    posx=posx+2;
+    printf("Player atras \n");
+ }
+ //posx=posxo;
+}
+
+void Crabmeat::SetDirecao (const int d){
+
+ direcao=d;
 }

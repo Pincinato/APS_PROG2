@@ -22,7 +22,7 @@ Jogador::~Jogador()
 // METODO PARA CARREGAR AS IMAGENS DO PERSONAGEM
 void Jogador::CarregaImagem()
 {
-    Sonic = al_load_bitmap("Imagens/Sonic.png");
+    Sonic = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Sonic.png");
 }
 
 // METODO PARA OBTER A COORDENADA X DA POSICAO DO PERSONAGEM

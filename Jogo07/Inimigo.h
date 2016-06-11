@@ -14,6 +14,7 @@ public:
     void SetposX(const int x);
     void SetposY(const int y);
 
+
     int posx, posy;
     std::string name;
 };

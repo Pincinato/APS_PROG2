@@ -11,7 +11,7 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
 using namespace std;
 
@@ -171,12 +171,14 @@ int main()
                 botaoprecionado = true;
                 Player1.SetDirecao(DIREITA);
                 Cenario01.SetDirecao(DIREITA);
+                Enemy1.SetDirecao(DIREITA);
                 break;
 
                 case ALLEGRO_KEY_LEFT:
                 botaoprecionado = true;
                 Player1.SetDirecao(ESQUERDA);
                 Cenario01.SetDirecao(ESQUERDA);
+                Enemy1.SetDirecao(ESQUERDA);
                 break;
 
                 case ALLEGRO_KEY_SPACE:
@@ -260,6 +262,9 @@ int main()
                 {
                     Player1.SetX();
                     Cenario01.SetX();
+                    if((Cenario01.GetX())<0){
+                      Enemy1.Ajusteposx();
+                     }
                 }
 
             cout << "Jogador: x = " << Player1.GetX() << endl;

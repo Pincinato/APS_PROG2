@@ -166,7 +166,7 @@ void GerenciadorGrafico::Pause(int o){
 
 void GerenciadorGrafico::Tela_inicial(int o){
 
-    tela_inicial=al_load_bitmap("/home/thiago/TeM/Abertura2.bmp");
+    tela_inicial=al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Abertura2.bmp");
 
     al_draw_bitmap(tela_inicial,0,0,0);
 

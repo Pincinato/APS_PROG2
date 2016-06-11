@@ -1,4 +1,5 @@
 #include "Cenario.h"
+#include <stdio.h>
 using namespace std;
 
 // CONSTRUTORA DA CLASSE CENARIO
@@ -29,7 +30,8 @@ Cenario::~Cenario()
 // METODO PARA CARREGAR A IMAGEM DO CENARIO
 void Cenario::CarregaImagem()
 {
-    cenario = al_load_bitmap("Imagens/Cenario1.png");
+    printf("Carrengando imagem cenario \n");
+    cenario = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Cenario3.png");
 }
 
 // METODO PARA OBTER A COORDENADA X DA POSICAO DO CENARIO
@@ -47,6 +49,7 @@ void Cenario::SetDirecao(int Direcao)
 // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO CENARIO
 void Cenario::SetX()
 {
+    printf(" Cenario setX \n");
     switch(direcao)
     {
     case ESQUERDA:
@@ -59,11 +62,11 @@ void Cenario::SetX()
     break;
 
     case DIREITA:
-        if(posx > -5600)
+        if(posx > -2000)
             posx = posx - 2;
 
         else
-            posx = -5600;
+            posx = -2000;
     break;
     }
 }
@@ -71,7 +74,9 @@ void Cenario::SetX()
 // METODO PARA DESENHAR O CENARIO
 void Cenario::DesenhaCenario()
 {
-    al_draw_bitmap(cenario, posx, 0, NULL);
+ printf(" Cenario desenha \n");
+ al_draw_bitmap(cenario, posx, 0, NULL);
+ printf(" Cenario sai desenha \n");
 }
 
 // PERGUNTAR PARA O PROFESSOR
