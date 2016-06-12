@@ -5,7 +5,7 @@
 // CONSTRUTORA DA CLASSE CRABMEAT
 Crabmeat::Crabmeat():Inimigo()
 {
-    crabmeat = NULL;
+    Forma = NULL;
     posxo = 400; // ATRIBUTO REFERENTE A COORDENADA X INICIAL DA POSICAO DO INIMIGO CRABMEAT
     velocidade = 1; // ATRIBUTO REFERENTE A VELOCIDADE DE MOVIMENTO DO INIMIGO CRABMEAT
     deslocamento=150;
@@ -29,7 +29,7 @@ Crabmeat::Crabmeat():Inimigo()
 Crabmeat::Crabmeat(int position):Inimigo()
 {
 
-    crabmeat = NULL;
+    Forma = NULL;
     posxo = position; // ATRIBUTO REFERENTE A COORDENADA X INICIAL DA POSICAO DO INIMIGO CRABMEAT
     velocidade = 1; // ATRIBUTO REFERENTE A VELOCIDADE DE MOVIMENTO DO INIMIGO CRABMEAT
     deslocamento=150;
@@ -58,7 +58,7 @@ Crabmeat::~Crabmeat()
 // METODO PARA CARREGAR AS IMAGENS DO PERSONAGEM
 void Crabmeat::CarregaImagem()
 {
-    crabmeat = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Crabmeat.png");
+    Forma = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Crabmeat.png");
 }
 
 // METODO PARA OBTER A COORDENADA X DA POSICAO DO PERSONAGEM
@@ -114,23 +114,23 @@ void Crabmeat::SetSources()
 {
     if(!delay)
     {
-        sourceX += al_get_bitmap_width(crabmeat) / 2;
+        sourceX += al_get_bitmap_width(Forma) / 2;
         sourceY = 0;
     }
 
     else
     {
         sourceX = 0;
-        sourceY = al_get_bitmap_height(crabmeat) / 2;
+        sourceY = al_get_bitmap_height(Forma) / 2;
     }
 
-    if(sourceX >= al_get_bitmap_width(crabmeat))
+    if(sourceX >= al_get_bitmap_width(Forma))
         sourceX = 0;
 }
 
 ALLEGRO_BITMAP* Crabmeat::GetBitmap(){
 
-    return crabmeat;
+    return Forma;
 
 }
 
@@ -138,13 +138,13 @@ ALLEGRO_BITMAP* Crabmeat::GetBitmap(){
 void Crabmeat::DesenhaPersonagem()
 {
     //al_draw_scaled_bitmap(crabmeat, sourceX, sourceY, 50, 35, posx, posy, 100, 70, NULL);
-    al_draw_bitmap_region(crabmeat, sourceX, sourceY, 50, 35, posx, posy, NULL);
+    al_draw_bitmap_region(Forma, sourceX, sourceY, 50, 35, posx, posy, NULL);
 }
 
 // PERGUNTAR PARA O PROFESSOR
 void Crabmeat::DestroiTudo()
 {
-   al_destroy_bitmap(crabmeat);
+   al_destroy_bitmap(Forma);
 }
 
 void Crabmeat::MoveX(){

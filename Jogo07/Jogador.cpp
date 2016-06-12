@@ -5,7 +5,7 @@
 // CONSTRUTORA DA CLASSE JOGADOR
 Jogador::Jogador():Personagem()
 {
-    Sonic = NULL;
+    Forma = NULL;
     posx = 50;
     posy = 360;
     posy_pulo=posy;
@@ -25,7 +25,7 @@ Jogador::~Jogador()
 // METODO PARA CARREGAR AS IMAGENS DO PERSONAGEM
 void Jogador::CarregaImagem()
 {
-    Sonic = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Sonic.png");
+    Forma = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Sonic.png");
 }
 
 // METODO PARA OBTER A COORDENADA X DA POSICAO DO PERSONAGEM
@@ -110,12 +110,12 @@ int Jogador::GetDirecao()
 void Jogador::SetSources(bool ev_botao)
 {
     if(ev_botao)
-        sourceX += al_get_bitmap_width(Sonic) / 10;
+        sourceX += al_get_bitmap_width(Forma) / 10;
 
     else
         sourceX = 0;
 
-    if(sourceX >= al_get_bitmap_width(Sonic))
+    if(sourceX >= al_get_bitmap_width(Forma))
         sourceX = 0;
 
     if(direcao == BAIXO)
@@ -139,16 +139,16 @@ void Jogador::SetSources(bool ev_botao)
 void Jogador::DesenhaJogador()
 {
     if(posx <= 300)
-        al_draw_bitmap_region(Sonic, sourceX, sourceY * al_get_bitmap_height(Sonic) / 3, 52, 63, posx, posy_pulo, NULL);
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx, posy_pulo, NULL);
 
     else
-        al_draw_bitmap_region(Sonic, sourceX, sourceY * al_get_bitmap_height(Sonic) / 3, 52, 63, 300, posy_pulo, NULL);
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, 300, posy_pulo, NULL);
 }
 
 // PERGUNTAR PARA O PROFESSOR
 void Jogador::DestroiTudo()
 {
-    al_destroy_bitmap(Sonic);
+    al_destroy_bitmap(Forma);
 }
 
 void Jogador::MoveX(){

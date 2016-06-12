@@ -28,7 +28,9 @@ void Fase1::Salva(){
 
 }
 
-void Fase1::AjusteY(int Y){
+void Fase1::AjusteY(int Y,Personagem *p){
+
+
 
 }
 

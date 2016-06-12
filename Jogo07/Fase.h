@@ -4,6 +4,7 @@
 #include "GerenciadorGrafico.h"
 #include "Crabmeat.h"
 #include "Jogador.h"
+#include "Personagem.h"
 
 //enum DIRECAO{DIREITA, ESQUERDA, CIMA, BAIXO};
 

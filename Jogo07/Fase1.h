@@ -10,6 +10,7 @@
 #include "Fase.h"
 
 
+
 class Fase1 : public Fase
 {
 public:
@@ -18,7 +19,7 @@ public:
     void Inicia(bool op, int n_jogadores);
     void Joga_fase();
     void Salva();
-    void AjusteY(int Y);
+    void AjusteY(int Y, Personagem *p);
 private:
     Cenario Cenario01;
     int y_cenario[6]={438,487,438,471,520,471};
