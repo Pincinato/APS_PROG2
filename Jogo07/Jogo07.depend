@@ -87,7 +87,7 @@
 	"Crabmeat.h"
 	<stdio.h>
 
-1465746913 /home/thiago/TeM/Jogo07/Crabmeat.h
+1465771911 /home/thiago/TeM/Jogo07/Crabmeat.h
 	"GerenciadorGrafico.h"
 	"Inimigo.h"
 
@@ -95,7 +95,7 @@
 	<string>
 	"Personagem.h"
 
-1465757364 source:/home/thiago/TeM/Jogo07/GerenciadorArquivo.cpp
+1465770936 source:/home/thiago/TeM/Jogo07/GerenciadorArquivo.cpp
 	"GerenciadorArquivo.h"
 	<string.h>
 	<cstdlib>
@@ -130,7 +130,7 @@
 	"Jogador.h"
 	<stdio.h>
 
-1465752835 source:/home/thiago/TeM/Jogo07/main.cpp
+1465770998 source:/home/thiago/TeM/Jogo07/main.cpp
 	"GerenciadorGrafico.h"
 	"Jogador.h"
 	"Crabmeat.h"
@@ -153,13 +153,13 @@
 1465745468 source:/home/thiago/TeM/Jogo07/Personagem.cpp
 	"Personagem.h"
 
-1465756199 source:/home/thiago/TeM/Jogo07/Fase1.cpp
+1465771843 source:/home/thiago/TeM/Jogo07/Fase1.cpp
 	"Fase1.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 
-1465750630 /home/thiago/TeM/Jogo07/Fase1.h
+1465771321 /home/thiago/TeM/Jogo07/Fase1.h
 	<string.h>
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"

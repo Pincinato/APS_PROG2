@@ -26,6 +26,7 @@ private:
     Cenario Cenario01;
     int y_cenario[6]={438,487,438,471,520,471};
     int x_muda_cenario[6]={0,-18,-172,-358,-1322,-1384};
+    int x_inimigos[2]={-550,-750};
 
 };
 

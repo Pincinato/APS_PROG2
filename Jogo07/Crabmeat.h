@@ -39,7 +39,7 @@ public:
     // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
     void SetX();
     //
-    void SetposX(int x);
+    //void SetposX(int x);
 
     // METODO PARA ATUALIZAR OS SPRITES DO PERSONAGEM
     void SetSources();

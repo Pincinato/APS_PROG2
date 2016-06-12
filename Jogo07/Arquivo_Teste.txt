@@ -1,10 +1,10 @@
 Jogador1
-107
-424
+422
+408
 Inimigo-Crabmeat1
-266
-58
+-123
+122
 150
 0
 Cenario 
--76
+-496

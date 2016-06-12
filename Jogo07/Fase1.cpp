@@ -56,10 +56,11 @@ if(!fim){
     Jogador Player1;
     AjusteY_Jogador(y_cenario[0],&Player1);
     if(DEBUG==1){printf("Criando Inimigo \n");}
-    Crabmeat Enemy1;
-    AjusteY(y_cenario[0],&Enemy1);
-    Crabmeat Enemy2(500);
-    AjusteY(y_cenario[0],&Enemy2);
+    Crabmeat Enemy1(1100);
+    AjusteY(y_cenario[3],&Enemy1);
+    Crabmeat Enemy2(900);
+    Enemy2.SetDeslocamento(270);
+    AjusteY(y_cenario[3],&Enemy2);
    if(DEBUG==1){printf("Crinado Cenario \n");}
     //Cenario Cenario01;
 
@@ -84,6 +85,7 @@ if(!fim){
         arquivo.Salva_jogo();
         arquivo.Salva_Jogador(Player1);
         arquivo.Salva_Inimigo(&Enemy1);
+        arquivo.Salva_Inimigo(&Enemy2);
         arquivo.Salva_Cenario(&Cenario01);
         salve=false;
     }
@@ -125,6 +127,23 @@ if(!fim){
                     if((Cenario01.GetX())<0){
                       Enemy1.Ajusteposx();
                       Enemy2.Ajusteposx();
+                    /*  if(Cenario01.GetX()== (x_inimigos[0]-460))
+                        {
+                        Enemy1.SetposX(460);
+                        Enemy1.SetControl_posx(0);
+                        Enemy1.SetDirecao(0);
+                        AjusteY(y_cenario[3],&Enemy1);
+                        if(DEBUG==0){printf(" inimigo 1 posicao %d",y_cenario[3]);}
+                        }
+                      else if(Cenario01.GetX()== (x_inimigos[1]-460))
+                        {
+                        Enemy2.SetposX(460);
+                        Enemy2.SetControl_posx(0);
+                        Enemy2.SetDirecao(0);
+                        AjusteY(y_cenario[3],&Enemy2);
+                        if(DEBUG==0){printf(" inimigo 1 posicao %d",y_cenario[3]);}
+                        }
+*/
                        for(i=1 ; i < 5;i++){
                         if(Cenario01.GetX()<= x_muda_cenario[i] && Cenario01.GetX() > x_muda_cenario[i+1]){
                             AjusteY_Jogador(y_cenario[i],&Player1);
@@ -134,6 +153,7 @@ if(!fim){
                       if (Cenario01.GetX() <= x_muda_cenario[5] ){
                         AjusteY_Jogador(y_cenario[5],&Player1);
                         }
+
 
                      }
                 }
