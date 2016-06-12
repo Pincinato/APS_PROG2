@@ -10,19 +10,15 @@ class Crabmeat: public Inimigo
 private:
     ALLEGRO_BITMAP *crabmeat; // ATRIBUTO REFERENTE AO PONTEIRO DOS SPRITES DO INIMIGO CRABMEAT
 
-    int posxo = 400; // ATRIBUTO REFERENTE A COORDENADA X INICIAL DA POSICAO DO INIMIGO CRABMEAT
-    int velocidade = 1; // ATRIBUTO REFERENTE A VELOCIDADE DE MOVIMENTO DO INIMIGO CRABMEAT
-    const int deslocamento=150;
     int sourceX; // ATRIBUTO AUXILIAR PARA DESENHAR
     int sourceY; // ATRIBUTO AUXILIAR PARA DESENHAR
-    int direcao; // ATRIBUTO REFERENTE A DIRECAO QUE O INIMIGO ESTA SE LOCOMOVENDO
     bool delay; // ATRIBUTO REFERENTE AO TEMPO DE PAUSA DO INIMIGO
-    int control_posx;
+
 
 public:
     // CONSTRUTORA DA CLASSE CRABMEAT
     Crabmeat();
-
+    Crabmeat(int position);
     // DESTRUTORA DA CLASSE CRABMEAT
     ~Crabmeat();
 
@@ -54,9 +50,6 @@ public:
     // PERGUNTAR PARA O PROFESSOR
     void DestroiTudo();
 
-    void Ajusteposx();
-
-    void SetDirecao(const int d);
 };
 
 #endif // CRABMEAT_H_INCLUDED

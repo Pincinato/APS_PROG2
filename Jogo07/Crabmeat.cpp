@@ -1,10 +1,14 @@
 #include "Crabmeat.h"
 #include <stdio.h>
 
+#define DEBUG 0
 // CONSTRUTORA DA CLASSE CRABMEAT
 Crabmeat::Crabmeat():Inimigo()
 {
     crabmeat = NULL;
+    posxo = 400; // ATRIBUTO REFERENTE A COORDENADA X INICIAL DA POSICAO DO INIMIGO CRABMEAT
+    velocidade = 1; // ATRIBUTO REFERENTE A VELOCIDADE DE MOVIMENTO DO INIMIGO CRABMEAT
+    deslocamento=150;
     posx = posxo;
     posy = 400;
     sourceX = 50;
@@ -22,6 +26,29 @@ Crabmeat::Crabmeat():Inimigo()
     CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
 }
 
+Crabmeat::Crabmeat(int position):Inimigo()
+{
+
+    crabmeat = NULL;
+    posxo = position; // ATRIBUTO REFERENTE A COORDENADA X INICIAL DA POSICAO DO INIMIGO CRABMEAT
+    velocidade = 1; // ATRIBUTO REFERENTE A VELOCIDADE DE MOVIMENTO DO INIMIGO CRABMEAT
+    deslocamento=150;
+    posx = posxo;
+    posy = 400;
+    sourceX = 50;
+    sourceY = 0;
+    direcao = 1;
+    delay = false;
+    std::string n;
+    n.clear();
+    n.append("Inimigo-Crabmeat \n");
+    n.append("\0");
+    control_posx=0;
+    //strcpy(name,"Inimigo-Crabmeat \n");
+    Set_Name(n);
+
+    CarregaImagem();
+}
 // DESTRUTORA DA CLASSE CRABMEAT
 Crabmeat::~Crabmeat()
 {
@@ -63,10 +90,10 @@ void Crabmeat::SetX()
     posx += direcao * velocidade;
     delay = false;
     */
-   printf(" Posicao posxo = %d \n",posxo);
+   if(DEBUG==1){printf(" Posicao posxo = %d \n",posxo);
    printf(" Posicao posx = %d \n",posx);
    printf(" Velocidade= %d \n",velocidade);
-   printf(" Control = %d \n",control_posx);
+   printf(" Control = %d \n",control_posx);}
    if(control_posx<deslocamento/2)
    {
     posx=posx-1*velocidade;
@@ -79,8 +106,8 @@ void Crabmeat::SetX()
       control_posx=0;
       }
     }
-    printf("Posicao posx %d \n",posx);
-}
+    if(DEBUG==1){printf("Posicao posx %d \n",posx);}
+    }
 
 // METODO PARA ALTERAR O SENTIDO DA IMAGEM
 void Crabmeat::SetSources()
@@ -118,24 +145,4 @@ void Crabmeat::DesenhaPersonagem()
 void Crabmeat::DestroiTudo()
 {
    al_destroy_bitmap(crabmeat);
-}
-
-void Crabmeat::Ajusteposx()
-{
- if(direcao==0)
-    {
-    posx=posx-2;
-    printf("Player frente \n");
-    }
- if(direcao==1)
- {
-    posx=posx+2;
-    printf("Player atras \n");
- }
- //posx=posxo;
-}
-
-void Crabmeat::SetDirecao (const int d){
-
- direcao=d;
 }

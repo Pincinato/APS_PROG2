@@ -1,6 +1,8 @@
 #ifndef CENARIO_H_INCLUDED
 #define CENARIO_H_INCLUDED
 #include "GerenciadorGrafico.h"
+#include <string.h>
+using namespace std;
 
 class Cenario
 {
@@ -21,7 +23,7 @@ public:
     ~Cenario();
 
     // METODO PARA CARREGAR A IMAGEM DO CENARIO
-    void CarregaImagem();
+    void CarregaImagem(char *Imagem);
 
     // METODO PARA OBTER A COORDENADA X DA POSICAO DO CENARIO
     int GetX();

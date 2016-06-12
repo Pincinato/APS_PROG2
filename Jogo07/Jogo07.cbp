@@ -58,6 +58,8 @@
 		<Unit filename="Inimigo.h" />
 		<Unit filename="Jogador.cpp" />
 		<Unit filename="Jogador.h" />
+		<Unit filename="Personagem.cpp" />
+		<Unit filename="Personagem.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

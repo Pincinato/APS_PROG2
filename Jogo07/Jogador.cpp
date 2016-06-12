@@ -1,11 +1,14 @@
 #include "Jogador.h"
+#include <stdio.h>
 
+#define DEBUG 0
 // CONSTRUTORA DA CLASSE JOGADOR
 Jogador::Jogador()
 {
     Sonic = NULL;
-    posx = 100;
+    posx = 50;
     posy = 360;
+    posy_pulo=posy;
     direcao = DIREITA;
     sourceX = 104;
     sourceY = 0;
@@ -66,6 +69,29 @@ void Jogador::SetX()
 
     else if(direcao == DIREITA)
         posx += velocidade;
+    if (pulando == 1)
+    {
+        if(DEBUG==1){printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");}
+        posy_pulo=posy_pulo+1;
+        if(posy_pulo>=posy+altura_pulo)
+            pulando=3;
+        else
+            pulando=2;
+   }
+   else if (pulando==3)
+    {
+        posy_pulo=posy_pulo-1;
+        if(posy_pulo<=posy)
+        {
+            pulando=0;
+        }
+    }
+
 }
 
 // METODO PARA ALTERAR A DIRECAO
@@ -92,18 +118,31 @@ void Jogador::SetSources(bool ev_botao)
     if(sourceX >= al_get_bitmap_width(Sonic))
         sourceX = 0;
 
-    if(direcao != BAIXO)
+    if(direcao == BAIXO)
+        sourceY = CIMA;
+    else  if(direcao != CIMA){
         sourceY = direcao;
+        }
+    else if (direcao==CIMA){
+        if(pulando==0)
+            pulando=1;
+
+        if(DEBUG==1){printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");
+        printf("pulando\n");}
+        }
 }
 
 // METODO PARA DESENHAR O JOGADOR
 void Jogador::DesenhaJogador()
 {
     if(posx <= 300)
-        al_draw_bitmap_region(Sonic, sourceX, sourceY * al_get_bitmap_height(Sonic) / 3, 52, 63, posx, posy, NULL);
+        al_draw_bitmap_region(Sonic, sourceX, sourceY * al_get_bitmap_height(Sonic) / 3, 52, 63, posx, posy_pulo, NULL);
 
     else
-        al_draw_bitmap_region(Sonic, sourceX, sourceY * al_get_bitmap_height(Sonic) / 3, 52, 63, 300, posy, NULL);
+        al_draw_bitmap_region(Sonic, sourceX, sourceY * al_get_bitmap_height(Sonic) / 3, 52, 63, 300, posy_pulo, NULL);
 }
 
 // PERGUNTAR PARA O PROFESSOR

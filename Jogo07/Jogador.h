@@ -16,11 +16,14 @@ private:
     ALLEGRO_BITMAP *Sonic; // ATRIBUTO REFERENTE AO PONTEIRO DOS SPRITES DO SONIC
 
     float posx; // ATRIBUTO REFERENTE A COORDENADA X DA POSICAO DO PERSONAGEM
-    float posy; // ATRIBUTO REFERENTE A COORDENADA Y DA POSICAO DO PERSONAGEM
+    int posy; // ATRIBUTO REFERENTE A COORDENADA Y DA POSICAO DO PERSONAGEM
+    int posy_pulo;
     const float velocidade = 1.5; // ATRIBUTO REFERENTE A VELOCIDADE DO PERSONAGEM
     int direcao; // ATRIBUTO REFERENTE AS DIRECOES
     int sourceX; // ATRIBUTO AUXILIAR PARA DESENHAR
     int sourceY; // ATRIBUTO AUXILIAR PARA DESENHAR
+    int pulando=0;
+    int altura_pulo=100;
 
 public:
     // CONSTRUTORA DA CLASSE JOGADOR
@@ -43,6 +46,7 @@ public:
     void SetX();
 
     void SetposX(int x);
+    void SetposY(int y);
 
     // METODO PARA ALTERAR A DIRECAO
     void SetDirecao(int Direcao);

@@ -2,7 +2,7 @@
 
 Inimigo::Inimigo()
 {
-    //ctor
+    //Actor
 }
 
 Inimigo::~Inimigo()
@@ -10,6 +10,11 @@ Inimigo::~Inimigo()
     //dtor
 }
 
+/*
+virtual void Inimigo::MoveX(){
+
+}
+*/
 
 const char* Inimigo::Get_Name(){
 
@@ -42,4 +47,75 @@ void Inimigo::SetposY(const int y){
 
     posy=y;
 
+}
+
+void Inimigo::Ajusteposx()
+{
+ if(direcao==0)
+    {
+    posx=posx-2;
+    }
+ if(direcao==1)
+ {
+    posx=posx+2;
+ }
+ //posx=posxo;
+}
+
+const int Inimigo::Getposxo(){
+
+    return posxo;
+
+}
+
+
+const int Inimigo::Getdeslocamento(){
+
+    return deslocamento;
+}
+
+const int Inimigo::Getvelocidade(){
+
+    return velocidade;
+
+}
+
+const int Inimigo::Getdirecao(){
+
+    return direcao;
+
+}
+
+const int Inimigo::Getcontrol_posx(){
+
+    return control_posx;
+}
+
+void Inimigo::SetDirecao(const int d){
+
+    direcao=d;
+
+}
+
+
+void Inimigo::SetPosxo(const int po){
+
+    posxo=po;
+
+}
+
+
+void Inimigo::SetDeslocamento(const int des){
+    deslocamento=des;
+
+}
+
+void Inimigo::SetVelocidade(const int v){
+
+    velocidade=v;
+}
+
+void Inimigo::SetControl_posx(const int control){
+
+    control_posx=control;
 }
