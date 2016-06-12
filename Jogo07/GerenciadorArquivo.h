@@ -9,6 +9,7 @@
 ///
 #include "Jogador.h"
 #include "Crabmeat.h"
+#include "Cenario.h"
 ///
 
 class GerenciadorArquivo
@@ -17,11 +18,11 @@ private:
 
     FILE *arquivo;
     int Salva_Fase(/*Fase*/);
-    int Salva_Cenario(/* Cenario c*/);
-    int Salva_Chefao(/*Chefao che*/);
+
+    int Salva_Chefao(/*Chefao c*/);
 
     void Load_Fase();
-    void Load_Cenario();
+
     void Load_Chefao();
 
 
@@ -38,6 +39,8 @@ public:
     void Load_Jogador(Jogador *j);
     int Salva_Inimigo(Inimigo *i);
     void Load_Inimigo(Inimigo *i);
+    int Salva_Cenario( Cenario *c);
+    void Load_Cenario(Cenario *c);
 
 };
 

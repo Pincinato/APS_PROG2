@@ -163,6 +163,8 @@ void Fase::Play(){
 
                             case 1:
                             salve=true;
+                            system_pause=true;
+                            opcao_pause=0;
                             break;
 
                             case 2:

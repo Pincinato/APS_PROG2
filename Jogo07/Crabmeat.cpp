@@ -17,7 +17,7 @@ Crabmeat::Crabmeat():Inimigo()
     delay = false;
     std::string n;
     n.clear();
-    n.append("Inimigo-Crabmeat \n");
+    n.append("Inimigo-Crabmeat");
     n.append("\0");
     control_posx=0;
     //strcpy(name,"Inimigo-Crabmeat \n");

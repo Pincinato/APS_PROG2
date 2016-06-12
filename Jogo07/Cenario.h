@@ -33,6 +33,7 @@ public:
 
     // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO CENARIO
     void SetX();
+    void SetposX(const int x);
 
     // METODO PARA DESENHAR O CENARIO
     void DesenhaCenario();

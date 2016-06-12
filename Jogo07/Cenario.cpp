@@ -42,6 +42,11 @@ int Cenario::GetX()
     return posx;
 }
 
+void Cenario::SetposX(const int x){
+
+    posx=x;
+}
+
 // METODO PARA ALTERAR A DIRECAO
 void Cenario::SetDirecao(int Direcao)
 {

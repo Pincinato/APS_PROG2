@@ -26,15 +26,17 @@ public:
     void SetPosxo(const int po);
     void SetControl_posx(const int control);
     void Ajusteposx();
+    const int GetId();
 
 
 protected:
 
-
+    static int id;
     int direcao,posxo,posx, posy;
     int velocidade,deslocamento;
     int control_posx;
     std::string name;
+    int myId;
 };
 
 #endif // INIMIGO_H_INCLUDED

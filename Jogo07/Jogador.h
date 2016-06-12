@@ -25,6 +25,7 @@ private:
     int sourceY; // ATRIBUTO AUXILIAR PARA DESENHAR
     int pulando=0;
     int altura_pulo=100;
+    int myId;
 
 public:
     // CONSTRUTORA DA CLASSE JOGADOR
@@ -64,6 +65,8 @@ public:
     // PERGUNTAR PARA O PROFESSOR
     void DestroiTudo();
     void MoveX();
+    static int id;
+    const int GetId();
 };
 
 #endif // JOGADOR_H_INCLUDED

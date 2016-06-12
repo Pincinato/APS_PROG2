@@ -31,7 +31,7 @@ void Fase1::Salva(){
 void Fase1::AjusteY_Jogador(int Y,Jogador *j){
 
     int novo_y;
-    if(DEBUG==0){printf("Altura do sonic %d ",al_get_bitmap_height(j->Forma));}
+    if(DEBUG==1){printf("Altura do sonic %d ",al_get_bitmap_height(j->Forma));}
     novo_y =Y-al_get_bitmap_height(j->Forma)/3;//Imagem do sonic é uma matris de 3 linhas
     j->SetposY(novo_y);
 }
@@ -39,7 +39,7 @@ void Fase1::AjusteY_Jogador(int Y,Jogador *j){
 void Fase1::AjusteY(int Y,Personagem *p){
 
     int novo_y;
-    if(DEBUG==0){printf("Altura do sonic %d ",al_get_bitmap_height(p->Forma));}
+    if(DEBUG==1){printf("Altura do sonic %d ",al_get_bitmap_height(p->Forma));}
     novo_y =Y-al_get_bitmap_height(p->Forma)/2;//Imagem do sonic é uma matris de 3 linhas
     p->SetposY(novo_y);
 
@@ -72,12 +72,21 @@ if(!fim){
         arquivo.Load_Inimigo(&Enemy1);
         if(DEBUG==1){printf("Carregando Jogador \n");}
         arquivo.Load_Jogador(&Player1);
+        if(DEBUG==1){printf("Carregando Cenario \n");}
+        arquivo.Load_Cenario(&Cenario01);
     }
     ///
     botaoprecionado=false;
     while(!fim)
     {
     Play();
+    if(salve==true){
+        arquivo.Salva_jogo();
+        arquivo.Salva_Jogador(Player1);
+        arquivo.Salva_Inimigo(&Enemy1);
+        arquivo.Salva_Cenario(&Cenario01);
+        salve=false;
+    }
     if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
      {
         Player1.SetDirecao(DIRECAO_F);
@@ -149,7 +158,7 @@ if(!fim){
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
         Cenario01.DesenhaCenario();
-        if(DEBUG ==0) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+        if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
         Player1.DesenhaJogador();
         Enemy1.DesenhaPersonagem();
         Enemy2.DesenhaPersonagem();

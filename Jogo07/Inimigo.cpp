@@ -2,7 +2,8 @@
 
 Inimigo::Inimigo():Personagem()
 {
-    //Actor
+     id++;
+     myId=id;
 }
 
 Inimigo::~Inimigo()
@@ -10,11 +11,10 @@ Inimigo::~Inimigo()
     //dtor
 }
 
-/*
-virtual void Inimigo::MoveX(){
+const int Inimigo::GetId(){
 
+ return myId;
 }
-*/
 
 const char* Inimigo::Get_Name(){
 
@@ -119,3 +119,5 @@ void Inimigo::SetControl_posx(const int control){
 
     control_posx=control;
 }
+
+int Inimigo::id=0;

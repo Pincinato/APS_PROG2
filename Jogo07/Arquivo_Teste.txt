@@ -1,4 +1,10 @@
-Jogador 
-
-Inimigo-Crabmeat 
-
+Jogador1
+107
+424
+Inimigo-Crabmeat1
+266
+58
+150
+0
+Cenario 
+-76

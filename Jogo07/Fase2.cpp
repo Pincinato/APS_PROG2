@@ -31,7 +31,7 @@ void Fase2::Salva(){
 void Fase2::AjusteY_Jogador(int Y,Jogador *j){
 
     int novo_y;
-    if(DEBUG==0){printf("Altura do sonic %d ",al_get_bitmap_height(j->Forma));}
+    if(DEBUG==1){printf("Altura do sonic %d ",al_get_bitmap_height(j->Forma));}
     novo_y =Y-al_get_bitmap_height(j->Forma)/3;//Imagem do sonic é uma matris de 3 linhas
     j->SetposY(novo_y);
 }
@@ -39,7 +39,7 @@ void Fase2::AjusteY_Jogador(int Y,Jogador *j){
 void Fase2::AjusteY(int Y,Personagem *p){
 
     int novo_y;
-    if(DEBUG==0){printf("Altura do sonic %d ",al_get_bitmap_height(p->Forma));}
+    if(DEBUG==1){printf("Altura do sonic %d ",al_get_bitmap_height(p->Forma));}
     novo_y =Y-al_get_bitmap_height(p->Forma)/2;//Imagem do sonic é uma matris de 3 linhas
     p->SetposY(novo_y);
 
@@ -48,7 +48,14 @@ void Fase2::AjusteY(int Y,Personagem *p){
 void Fase2::Joga_fase(){
 
     fim=false;
-    Init();
+    /// ----------VARIÁVEIS DO JOGO----------
+    fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
+    bool escolha=false;
+    load=false;
+
+    /// ----------LOOP PRINCIPAL----------
+    // INICIANDO O CONTADOR
+    al_start_timer(Gerenciador.GetTimer());
     int i;
 if(!fim){
 
@@ -149,7 +156,7 @@ if(!fim){
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
         Cenario01.DesenhaCenario();
-        if(DEBUG ==0) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+        if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
         Player1.DesenhaJogador();
         Enemy1.DesenhaPersonagem();
         Enemy2.DesenhaPersonagem();
