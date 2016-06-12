@@ -3,7 +3,7 @@
 
 #define DEBUG 0
 // CONSTRUTORA DA CLASSE JOGADOR
-Jogador::Jogador()
+Jogador::Jogador():Personagem()
 {
     Sonic = NULL;
     posx = 50;
@@ -149,4 +149,13 @@ void Jogador::DesenhaJogador()
 void Jogador::DestroiTudo()
 {
     al_destroy_bitmap(Sonic);
+}
+
+void Jogador::MoveX(){
+
+}
+
+void Jogador::SetposY(const int y){
+
+ posy=y;
 }

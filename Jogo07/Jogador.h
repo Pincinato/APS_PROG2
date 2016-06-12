@@ -5,12 +5,13 @@
 #define JOGADOR_H_INCLUDED
 #include "GerenciadorGrafico.h"
 #include <iostream>
+#include "Personagem.h"
 
 //enum DIRECAO{DIREITA, ESQUERDA, CIMA, BAIXO};
 
 using namespace std;
 
-class Jogador
+class Jogador:public Personagem
 {
 private:
     ALLEGRO_BITMAP *Sonic; // ATRIBUTO REFERENTE AO PONTEIRO DOS SPRITES DO SONIC
@@ -46,7 +47,7 @@ public:
     void SetX();
 
     void SetposX(int x);
-    void SetposY(int y);
+    void SetposY(const int y);
 
     // METODO PARA ALTERAR A DIRECAO
     void SetDirecao(int Direcao);
@@ -62,6 +63,7 @@ public:
 
     // PERGUNTAR PARA O PROFESSOR
     void DestroiTudo();
+    void MoveX();
 };
 
 #endif // JOGADOR_H_INCLUDED

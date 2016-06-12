@@ -6,7 +6,8 @@ class Personagem
 public:
     Personagem();
     virtual ~Personagem();
-    void MoveX();
+    virtual void MoveX()=0;
+    virtual void SetposY(const int y)=0;
 
 protected:
     bool estado;

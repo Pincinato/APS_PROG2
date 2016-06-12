@@ -1,6 +1,6 @@
 #include "Inimigo.h"
 
-Inimigo::Inimigo()
+Inimigo::Inimigo():Personagem()
 {
     //Actor
 }

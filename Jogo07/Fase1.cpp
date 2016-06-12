@@ -13,8 +13,6 @@ Fase1::Fase1():Fase(){
  Imagem.append("/home/thiago/TeM/Imagem_Cenario/cenario01_2.png");
  Imagem.append("\0");
  Cenario01.CarregaImagem(&Imagem[0]);
-// y_cenario[]={438,487,438,471,520,471};
-// x_cenario={-8,0,0,0,0,0};
 
 
 }
@@ -27,6 +25,10 @@ void Fase1::Inicia(bool op, int n_jogadores){
 }
 
 void Fase1::Salva(){
+
+}
+
+void Fase1::AjusteY(int Y){
 
 }
 

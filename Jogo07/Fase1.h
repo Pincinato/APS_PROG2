@@ -18,10 +18,12 @@ public:
     void Inicia(bool op, int n_jogadores);
     void Joga_fase();
     void Salva();
+    void AjusteY(int Y);
 private:
     Cenario Cenario01;
-    int y_cenario[6];
-    int x_muda_cenario[6];
+    int y_cenario[6]={438,487,438,471,520,471};
+    int x_muda_cenario[6]={0,-8,-170,-338,-1296,-1378};
+
 };
 
 #endif

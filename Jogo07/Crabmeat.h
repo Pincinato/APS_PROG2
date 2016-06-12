@@ -21,7 +21,7 @@ public:
     Crabmeat(int position);
     // DESTRUTORA DA CLASSE CRABMEAT
     ~Crabmeat();
-
+    void MoveX();
     // METODO PARA CARREGAR AS IMAGENS DO PERSONAGEM
     void CarregaImagem();
 

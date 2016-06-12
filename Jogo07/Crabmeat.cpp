@@ -146,3 +146,7 @@ void Crabmeat::DestroiTudo()
 {
    al_destroy_bitmap(crabmeat);
 }
+
+void Crabmeat::MoveX(){
+
+}

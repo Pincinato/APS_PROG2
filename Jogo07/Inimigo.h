@@ -3,7 +3,7 @@
 #include <string>
 #include "Personagem.h"
 
-class Inimigo
+class Inimigo:public Personagem
 {
 public:
     Inimigo();
