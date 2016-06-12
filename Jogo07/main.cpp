@@ -7,6 +7,7 @@
 #include "GerenciadorArquivo.h"
 #include "Cenario.h"
 #include "Fase1.h"
+#include "Fase2.h"
 
 #include <iostream>
 #include <allegro5/allegro_audio.h>
@@ -49,7 +50,10 @@ int main()
     ///
  */
     ///fim de teste audio
-    Fase1 teste;
-    teste.Joga_fase();
+
+    ///Fase1 nivel_1;
+    Fase2 nivel_2;
+    ///nivel_1.Joga_fase();
+    nivel_2.Joga_fase();
     return 0;
 }

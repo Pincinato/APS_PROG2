@@ -12,8 +12,8 @@ Jogador::Jogador():Personagem()
     direcao = DIREITA;
     sourceX = 104;
     sourceY = 0;
-
-    CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
+    Forma = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Sonic.png");
+// CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
 }
 
 // DESTRUTORA DA CLASSE JOGADOR
@@ -35,7 +35,7 @@ float Jogador::GetX()
 }
 
 // METODO PARA OBTER A COORDENADA Y DA POSICAO DO PERSONAGEM
-int Jogador::GetposY(){
+const int Jogador::GetposY(){
 
     return posy;
 }
@@ -139,10 +139,10 @@ void Jogador::SetSources(bool ev_botao)
 void Jogador::DesenhaJogador()
 {
     if(posx <= 300)
-        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx, posy_pulo, NULL);
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx, posy, NULL);
 
     else
-        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, 300, posy_pulo, NULL);
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, 300, posy, NULL);
 }
 
 // PERGUNTAR PARA O PROFESSOR

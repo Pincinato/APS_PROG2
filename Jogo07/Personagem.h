@@ -14,10 +14,12 @@ public:
     virtual ~Personagem();
     virtual void MoveX()=0;
     virtual void SetposY(const int y)=0;
+    virtual const int GetposY()=0;
+    ALLEGRO_BITMAP *Forma;
 
 protected:
     bool estado;
-    ALLEGRO_BITMAP *Forma;
+
 };
 
 #endif

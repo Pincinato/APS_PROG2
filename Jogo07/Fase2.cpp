@@ -1,4 +1,4 @@
-#include "Fase1.h"
+#include "Fase2.h"
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 #include <iostream>
@@ -6,29 +6,29 @@
 
 #define DEBUG 0
 
-Fase1::Fase1():Fase(){
+Fase2::Fase2():Fase(){
 
  std::string Imagem;
  Imagem.clear();
- Imagem.append("/home/thiago/TeM/Imagem_Cenario/cenario01_2.png");
+ Imagem.append("/home/thiago/TeM/Imagem_Cenario/cenario02_1.png");
  Imagem.append("\0");
  Cenario01.CarregaImagem(&Imagem[0]);
 
 
 }
 
-Fase1::~Fase1(){
+Fase2::~Fase2(){
 }
 
-void Fase1::Inicia(bool op, int n_jogadores){
-
-}
-
-void Fase1::Salva(){
+void Fase2::Inicia(bool op, int n_jogadores){
 
 }
 
-void Fase1::AjusteY_Jogador(int Y,Jogador *j){
+void Fase2::Salva(){
+
+}
+
+void Fase2::AjusteY_Jogador(int Y,Jogador *j){
 
     int novo_y;
     if(DEBUG==0){printf("Altura do sonic %d ",al_get_bitmap_height(j->Forma));}
@@ -36,7 +36,7 @@ void Fase1::AjusteY_Jogador(int Y,Jogador *j){
     j->SetposY(novo_y);
 }
 
-void Fase1::AjusteY(int Y,Personagem *p){
+void Fase2::AjusteY(int Y,Personagem *p){
 
     int novo_y;
     if(DEBUG==0){printf("Altura do sonic %d ",al_get_bitmap_height(p->Forma));}
@@ -45,11 +45,11 @@ void Fase1::AjusteY(int Y,Personagem *p){
 
 }
 
-void Fase1::Joga_fase(){
+void Fase2::Joga_fase(){
 
     fim=false;
     Init();
-    int i=0;
+    int i;
 if(!fim){
 
     if(DEBUG==1){printf("Criando jogador \n");}
@@ -116,14 +116,14 @@ if(!fim){
                     if((Cenario01.GetX())<0){
                       Enemy1.Ajusteposx();
                       Enemy2.Ajusteposx();
-                       for(i=1 ; i < 5;i++){
+                      for(i=1 ; i < 10;i++){
                         if(Cenario01.GetX()<= x_muda_cenario[i] && Cenario01.GetX() > x_muda_cenario[i+1]){
                             AjusteY_Jogador(y_cenario[i],&Player1);
-                            i=6;
+                            i=10;
                             }
                         }
-                      if (Cenario01.GetX() <= x_muda_cenario[5] ){
-                        AjusteY_Jogador(y_cenario[5],&Player1);
+                      if (Cenario01.GetX() <= x_muda_cenario[10] ){
+                        AjusteY_Jogador(y_cenario[10],&Player1);
                         }
 
                      }
@@ -171,3 +171,4 @@ if(!fim){
    // teste.Load_Jogo();
     }
 }
+

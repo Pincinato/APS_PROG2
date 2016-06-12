@@ -41,7 +41,7 @@ public:
 
     int GetposX();
 
-    int GetposY();
+    const int GetposY();
 
     // METODO PARA ALTERAR A COORDENADA X DA POSICAO DO PERSONAGEM
     void SetX();

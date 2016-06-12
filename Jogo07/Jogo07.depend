@@ -87,7 +87,7 @@
 	"Crabmeat.h"
 	<stdio.h>
 
-1465746275 /home/thiago/TeM/Jogo07/Crabmeat.h
+1465746913 /home/thiago/TeM/Jogo07/Crabmeat.h
 	"GerenciadorGrafico.h"
 	"Inimigo.h"
 
@@ -111,7 +111,7 @@
 	"Jogador.h"
 	"Crabmeat.h"
 
-1465746250 /home/thiago/TeM/Jogo07/Jogador.h
+1465746847 /home/thiago/TeM/Jogo07/Jogador.h
 	"GerenciadorGrafico.h"
 	<iostream>
 	"Personagem.h"
@@ -125,22 +125,23 @@
 1465745403 source:/home/thiago/TeM/Jogo07/Inimigo.cpp
 	"Inimigo.h"
 
-1465745927 source:/home/thiago/TeM/Jogo07/Jogador.cpp
+1465747872 source:/home/thiago/TeM/Jogo07/Jogador.cpp
 	"Jogador.h"
 	<stdio.h>
 
-1465737489 source:/home/thiago/TeM/Jogo07/main.cpp
+1465752036 source:/home/thiago/TeM/Jogo07/main.cpp
 	"GerenciadorGrafico.h"
 	"Jogador.h"
 	"Crabmeat.h"
 	"GerenciadorArquivo.h"
 	"Cenario.h"
 	"Fase1.h"
+	"Fase2.h"
 	<iostream>
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 
-1465746466 /home/thiago/TeM/Jogo07/Personagem.h
+1465746823 /home/thiago/TeM/Jogo07/Personagem.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_primitives.h>
@@ -151,13 +152,13 @@
 1465745468 source:/home/thiago/TeM/Jogo07/Personagem.cpp
 	"Personagem.h"
 
-1465746250 source:/home/thiago/TeM/Jogo07/Fase1.cpp
+1465751948 source:/home/thiago/TeM/Jogo07/Fase1.cpp
 	"Fase1.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 
-1465746086 /home/thiago/TeM/Jogo07/Fase1.h
+1465750630 /home/thiago/TeM/Jogo07/Fase1.h
 	<string.h>
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"
@@ -166,16 +167,31 @@
 	"Cenario.h"
 	"Fase.h"
 
-1465746085 /home/thiago/TeM/Jogo07/Fase.h
+1465750799 /home/thiago/TeM/Jogo07/Fase.h
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"
 	"Crabmeat.h"
 	"Jogador.h"
 	"Personagem.h"
 
-1465741706 source:/home/thiago/TeM/Jogo07/Fase.cpp
+1465750793 source:/home/thiago/TeM/Jogo07/Fase.cpp
 	"Fase.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
+
+1465752122 source:/home/thiago/TeM/Jogo07/Fase2.cpp
+	"Fase2.h"
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<iostream>
+
+1465752407 /home/thiago/TeM/Jogo07/Fase2.h
+	<string.h>
+	"GerenciadorArquivo.h"
+	"GerenciadorGrafico.h"
+	"Crabmeat.h"
+	"Jogador.h"
+	"Cenario.h"
+	"Fase.h"
 

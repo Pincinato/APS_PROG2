@@ -32,7 +32,7 @@ public:
     float GetY();
 
     int GetposX();
-    int GetposY();
+    //const int GetposY();
 
     ALLEGRO_BITMAP* GetBitmap();
 
