@@ -15,6 +15,7 @@ public:
     virtual ~Fase();
     void Init();
     void Play();
+    //void SetGerenciador(GerenciadorGrafico g);
     //virtual void Joga_fase();
 protected:
     GerenciadorGrafico Gerenciador;

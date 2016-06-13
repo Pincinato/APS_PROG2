@@ -71,6 +71,7 @@ if(!fim){
     if(load==true){
         if(DEBUG==1){printf("Carregando Inimigo \n ");}
         arquivo.Load_Inimigo(&Enemy1);
+        arquivo.Load_Inimigo(&Enemy2);
         if(DEBUG==1){printf("Carregando Jogador \n");}
         arquivo.Load_Jogador(&Player1);
         if(DEBUG==1){printf("Carregando Cenario \n");}

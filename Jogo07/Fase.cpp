@@ -6,11 +6,18 @@
 
 
 Fase::Fase(){
+
+
 }
 
 Fase::~Fase(){
 }
 
+/*void Fase::SetGerenciador()
+{
+ GerenciadorGrafico *g
+}
+*/
 void Fase::Init(){
 
     /// ----------VARIÁVEIS DO JOGO----------

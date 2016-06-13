@@ -50,9 +50,10 @@ int main()
     ///
  */
     ///fim de teste audio
+
     Fase1 nivel_1;
     nivel_1.Joga_fase();
-    //Fase2 nivel_2;
-    //nivel_2.Joga_fase();
+    Fase2 nivel_2;
+    nivel_2.Joga_fase();
     return 0;
 }
