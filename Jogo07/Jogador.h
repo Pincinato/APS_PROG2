@@ -67,6 +67,8 @@ public:
     void MoveX();
     static int id;
     const int GetId();
+
+    bool ataque =false;
 };
 
 #endif // JOGADOR_H_INCLUDED

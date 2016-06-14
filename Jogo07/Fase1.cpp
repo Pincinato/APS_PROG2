@@ -31,25 +31,17 @@ void Fase1::Inicia(bool op, int n_jogadores){
 
 void Fase1::Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player)
 {
-    int begin_colisao_inimigo_voltando=(x-EnemyA->Getdeslocamento()/2+EnemyA->Getcontrol_posx());
-    int begin_colisao_inimigo_indo=x - (+EnemyA->Getcontrol_posx()-EnemyA->Getdeslocamento()/2);
-/*
-    if(DEBUG==0){printf("Regiao de colisao \n");
-                 printf(" calculo1 =%d \ne 2 = %d\n",Cenario01.GetX()-al_get_bitmap_width(player->Forma)/10,begin_colisao_inimigo_voltando- al_get_bitmap_width(EnemyA->Forma)/2 );}
-        //if(Cenario01.GetX()== x - (+EnemyA->Getcontrol_posx()-EnemyA->Getdeslocamento()/2))
-        if(Cenario01.GetX()+al_get_bitmap_width(player->Forma)/10 == begin_colisao_inimigo_voltando- al_get_bitmap_width(EnemyA->Forma)/2)
-        {
-          if(DEBUG==0){printf("Colidiu inimigo 1 1 if");}
-        }
-          else if(Cenario01.GetX()==begin_colisao_inimigo_indo)
-        {
-           if(DEBUG==0){printf("Colidiu inimigo 1 2 if");}
-        }
-*/
-    printf("posicao jogador %d\n posicao Inimigo%d \n",player->GetposX(),EnemyA->GetposX());
+    //printf("posicao jogador %d\n posicao Inimigo%d \n",player->GetposX(),EnemyA->GetposX());
     if(EnemyA->GetposX()+al_get_bitmap_width(EnemyA->Forma)/4 > 300 && EnemyA->GetposX()-al_get_bitmap_width(EnemyA->Forma)/4<=300)
-        printf("Colisão \n");
-
+        {
+        if(DEBUG==0){printf("Colisão \n");}
+         if(player->ataque==true)
+         {
+            EnemyA->vivo=false;
+         }
+         else
+            player->vivo=false;
+        }
 }
 
 void Fase1::AjusteY_Jogador(int Y,Jogador *j){
@@ -258,9 +250,12 @@ if(!fim){
             }
         ///Fim do tratamento de colisoes inimigos
         Player1.DesenhaJogador();
-        Enemy1.DesenhaPersonagem();
-        Enemy2.DesenhaPersonagem();
-        Enemy3.DesenhaPersonagem();
+        if(Enemy1.vivo)
+            Enemy1.DesenhaPersonagem();
+        if(Enemy2.vivo)
+            Enemy2.DesenhaPersonagem();
+        if(Enemy3.vivo)
+            Enemy3.DesenhaPersonagem();
         // DUPLO BUFFER
         al_flip_display();
 

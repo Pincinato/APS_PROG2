@@ -120,10 +120,13 @@ void Jogador::SetSources(bool ev_botao)
     if(sourceX >= al_get_bitmap_width(Forma))
         sourceX = 0;
 
-    if(direcao == BAIXO)
+    if(direcao == BAIXO){
         sourceY = CIMA;
+        ataque=true;
+        }
     else  if(direcao != CIMA){
         sourceY = direcao;
+        ataque=false;
         }
     else if (direcao==CIMA){
         if(pulando==0)

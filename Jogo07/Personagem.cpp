@@ -2,7 +2,7 @@
 
 Personagem::Personagem()
 {
- estado=1;
+ vivo=true;
 }
 Personagem::~Personagem(){
 

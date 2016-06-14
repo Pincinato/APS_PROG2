@@ -16,9 +16,7 @@ public:
     virtual void SetposY(const int y)=0;
     virtual const int GetposY()=0;
     ALLEGRO_BITMAP *Forma;
-
-protected:
-    bool estado;
+    bool vivo;
 
 };
 
