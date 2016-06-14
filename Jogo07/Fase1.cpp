@@ -81,8 +81,11 @@ if(!fim){
     inimigos.push_back(&Enemy3);
    if(DEBUG==1){printf("Crinado Cenario \n");}
     //Cenario Cenario01;
-
-
+    ///Atualiza posição dos inimigos
+   /* x_inimigo[0]=x_inimigo[0]-Enemy1.Getdeslocamento();
+    x_inimigo[1]=x_inimigo[1]-Enemy2.Getdeslocamento();
+    x_inimigo[2]=x_inimigo[2]-Enemy3.Getdeslocamento();
+    */
     /// ----------VARIÁVEIS DO JOGO----------
     // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
     /// teste para carregar os elementos
@@ -102,6 +105,14 @@ if(!fim){
     while(!fim)
     {
     Play();
+    if(DEBUG==1){
+    if(Enemy1.Getcontrol_posx()>=Enemy1.Getdeslocamento()/2)
+        //cout << "Teste = " << (x_inimigo[0]-Enemy1.Getdeslocamento()/2 + (Enemy1.Getcontrol_posx()*Enemy1.Getvelocidade())/2)-(Enemy1.Getdeslocamento()/2-(Enemy1.Getcontrol_posx()-Enemy1.Getdeslocamento()/2)*2) << endl;
+        cout<< "Teste p2 = "<<x_inimigo[0] - (+Enemy1.Getcontrol_posx()-Enemy1.Getdeslocamento()/2) <<endl;
+    else
+        //cout << "Teste = " << (x_inimigo[0] - (Enemy1.Getcontrol_posx()*Enemy1.Getvelocidade()))-(Enemy1.Getdeslocamento()/2-Enemy1.Getcontrol_posx()*2) << endl;
+        cout << "Teste = "<<x_inimigo[0]-Enemy1.Getdeslocamento()/2+Enemy1.Getcontrol_posx()<<endl;
+        }
     if(salve==true){
         Salve();
         arquivo.Salva_jogo();
@@ -180,9 +191,19 @@ if(!fim){
                         }
                         ///Fim do obstáculos.
                         ///Tratamento de colisão personagem 1
-                      if(Cenario01.GetX()<=-432 && Cenario01.GetX() > -432-(Enemy1.Getdeslocamento() ) ){
-                         if(Player1.GetposX()==Enemy1.GetposX()-Cenario01.GetX()-300)
+                      if(DEBUG==1){printf("Tratamento de colisão Cenario = %d /n %d \n",x_inimigo[0],x_inimigo[0] -Enemy1.Getdeslocamento()/2);}
+                      if(Cenario01.GetX()<=x_inimigo[0] && Cenario01.GetX() > x_inimigo[0] -Enemy1.Getdeslocamento()/2 )
+                      {
+                         if(DEBUG==0){printf("Regiao de colisao \n");}
+                         if(Cenario01.GetX()==x_inimigo[0] - (+Enemy1.Getcontrol_posx()-Enemy1.Getdeslocamento()/2))
+                          {
                             if(DEBUG==0){printf("Colidiu inimigo 1");}
+                          }
+                         else if(Cenario01.GetX()==(x_inimigo[0]-Enemy1.Getdeslocamento()/2+Enemy1.Getcontrol_posx()))
+                          {
+                                if(DEBUG==0){printf("Colidiu inimigo 1");}
+                          }
+
                       }
                       ///Tratamento de colisão personagem 2
                       if(Cenario01.GetX()<=-708 && Cenario01.GetX() > -432-(Enemy2.Getdeslocamento()) ){
@@ -201,10 +222,11 @@ if(!fim){
                      }
                 }
 
-            if(DEBUG==0){cout << "Jogador: x = " << Player1.GetX() << endl;
+            if(DEBUG==1){cout << "Jogador: x = " << Player1.GetX() << endl;
                          cout << "Inimigo: x1 = " << Enemy1.GetX() << endl;
                          cout << "Inimigo: x2 = " << Enemy2.GetX() << endl;
-                         cout << "Inimigo: x3 = " << Enemy3.GetX() << endl;}
+                         cout << "Inimigo: x3 = " << Enemy3.GetX() << endl;
+                         }
             }
            if(Player1.GetposX() > (Enemy1.GetX()-al_get_bitmap_width(Enemy1.GetBitmap())/2 )&& Player1.GetX() < (Enemy1.GetX() +al_get_bitmap_width(Enemy1.GetBitmap())/2) )
             {
@@ -225,7 +247,7 @@ if(!fim){
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
         Cenario01.DesenhaCenario();
-        if(DEBUG ==0) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+        if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
         Player1.DesenhaJogador();
         Enemy1.DesenhaPersonagem();
         Enemy2.DesenhaPersonagem();
