@@ -8,6 +8,11 @@ using namespace std;
 // CONSTRUTORA DA CLASSE GERENCIADORGRAFICO
 GerenciadorGrafico::GerenciadorGrafico()
 {
+
+}
+
+void GerenciadorGrafico::Init(){
+
     FilaEventos = NULL;
     display = NULL;
     timer = NULL;
@@ -22,8 +27,8 @@ GerenciadorGrafico::GerenciadorGrafico()
     CriaTimer(); // CRIA O TEMPORIZADOR
     RegistraSources(); // REGISTRA OS SOURCES DO ALLEGRO NA FILA DE EVENTOS
     CriaFonte(); // CRIA A FONTE PADRAO DO JOGO
-}
 
+}
 // DESTRUTORA DA CLASSE GERENCIADORGRAFICO
 GerenciadorGrafico::~GerenciadorGrafico()
 {
@@ -179,6 +184,48 @@ void GerenciadorGrafico::Tela_inicial(int o){
     break;
     case 2:
     al_draw_text(fonte, al_map_rgb(255, 255, 255), 130 , 130, ALLEGRO_ALIGN_CENTRE,"Sair");
+    break;
+    }
+    al_flip_display();
+}
+
+
+void GerenciadorGrafico::EscolhaJogadores(int o){
+
+    tela_inicial=al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Abertura2.bmp");
+
+    al_draw_bitmap(tela_inicial,0,0,0);
+
+    switch(o){
+    case 0:
+    al_draw_text(fonte, al_map_rgb(0, 255, 255), 130 , 130, ALLEGRO_ALIGN_CENTRE,"1-jogador");
+    break;
+    case 1:
+    al_draw_text(fonte, al_map_rgb(0, 0, 255), 130 , 130, ALLEGRO_ALIGN_CENTRE,"2-jogadores");
+    break;
+    case 2:
+    al_draw_text(fonte, al_map_rgb(255, 255, 0), 130 , 130, ALLEGRO_ALIGN_CENTRE,"Sair");
+    break;
+    }
+    al_flip_display();
+}
+
+
+void GerenciadorGrafico::EscolheFase (int o){
+
+    tela_inicial=al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Abertura2.bmp");
+
+    al_draw_bitmap(tela_inicial,0,0,0);
+
+    switch(o){
+    case 0:
+    al_draw_text(fonte, al_map_rgb(0, 0, 0), 130 , 130, ALLEGRO_ALIGN_CENTRE,"1-Fase");
+    break;
+    case 1:
+    al_draw_text(fonte, al_map_rgb(255, 255, 255), 130 , 130, ALLEGRO_ALIGN_CENTRE,"2-Fase");
+    break;
+    case 2:
+    al_draw_text(fonte, al_map_rgb(255, 0, 255), 130 , 130, ALLEGRO_ALIGN_CENTRE,"3-Fase");
     break;
     }
     al_flip_display();

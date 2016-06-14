@@ -74,10 +74,13 @@ public:
 
     void Tela_inicial(int o);
 
-    void Tela_escolhe_jogador();
+    void EscolhaJogadores(int o);
+
+    void EscolheFase(int o);
 
     // PERGUNTAR AO PROFESSOR
     void DestroiTudo();
+    void Init();
 };
 
 #endif // GERENCIADORGRAFICO_H_INCLUDED

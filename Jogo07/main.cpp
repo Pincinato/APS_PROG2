@@ -12,6 +12,7 @@
 #include <iostream>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
+#include <string>
 
 #define DEBUG 0
 
@@ -50,10 +51,213 @@ int main()
     ///
  */
     ///fim de teste audio
+    bool fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
+    bool escolha=false;
+    bool load=false;
+    GerenciadorGrafico Gerenciador;
+    Gerenciador.Init();
+    ALLEGRO_EVENT ev;
+    /// ----------LOOP PRINCIPAL----------
+    // INICIANDO O CONTADOR
 
-    Fase1 nivel_1;
-    nivel_1.Joga_fase();
-    Fase2 nivel_2;
-    nivel_2.Joga_fase();
+    al_start_timer(Gerenciador.GetTimer());
+
+    // ESCONDENDO O CURSOR DO MOUSE
+    // al_hide_mouse_cursor(display);
+
+    /// Teste da tela inicial
+
+    int tel_ini = 0;
+
+    Gerenciador.Tela_inicial(0);
+
+    while(!escolha){
+        al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
+        if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+        {
+        switch(ev.keyboard.keycode){
+            case ALLEGRO_KEY_RIGHT:
+            tel_ini++;
+            if(tel_ini>=3)
+                tel_ini=0;
+
+            Gerenciador.Tela_inicial(tel_ini);
+            break;
+
+            case ALLEGRO_KEY_LEFT:
+            tel_ini--;
+            if(tel_ini < 0)
+                tel_ini = 2;
+
+            Gerenciador.Tela_inicial(tel_ini);
+            break;
+
+            case ALLEGRO_KEY_ENTER:
+                if(tel_ini==0)
+                {
+                 escolha=true;
+                 load=false;
+                }
+                else if(tel_ini==1)
+                {
+                 load=true;
+                 escolha=true;
+                }
+                else if(tel_ini==2)
+                {
+                 escolha=true;
+                 fim=true;
+                }
+            break;
+           }
+
+        }
+    }
+    if(escolha==true && load==false && fim==false){
+      escolha=false;
+      Gerenciador.EscolhaJogadores(0);
+      int tel_joga;
+      bool Player2;
+      tel_joga=0;
+      while(!escolha){
+        al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
+        if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+        {
+        switch(ev.keyboard.keycode){
+            case ALLEGRO_KEY_RIGHT:
+            tel_joga++;
+            if(tel_joga>=3)
+                tel_joga=0;
+
+            Gerenciador.EscolhaJogadores(tel_joga);
+            break;
+
+            case ALLEGRO_KEY_LEFT:
+            tel_joga--;
+            if(tel_joga < 0)
+                tel_joga = 2;
+
+            Gerenciador.EscolhaJogadores(tel_joga);
+            break;
+
+            case ALLEGRO_KEY_ENTER:
+                if(tel_joga==0)
+                {
+                 escolha=true;
+                 Player2=false;
+                }
+                else if(tel_joga==1)
+                {
+                 Player2=true;
+                 escolha=true;
+                }
+                else if(tel_joga==2)
+                {
+                 escolha=true;
+                 fim=true;
+                }
+            break;
+           }
+
+        }
+     }
+      if(escolha==true && fim ==false){
+       escolha=false;
+       Gerenciador.EscolheFase(0);
+       int tel_fase;
+       bool Fase_1;
+       bool Fase_2;
+       tel_fase=0;
+       while(!escolha){
+        al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
+        if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+        {
+        switch(ev.keyboard.keycode){
+            case ALLEGRO_KEY_RIGHT:
+            tel_fase++;
+            if(tel_fase>=3)
+                tel_fase=0;
+
+            Gerenciador.EscolheFase(tel_fase);
+            break;
+
+            case ALLEGRO_KEY_LEFT:
+            tel_fase--;
+            if(tel_fase < 0)
+                tel_fase = 2;
+
+            Gerenciador.EscolheFase(tel_fase);
+            break;
+
+            case ALLEGRO_KEY_ENTER:
+                if(tel_fase==0)
+                {
+                 escolha=true;
+                 Fase_2=false;
+                 Fase_1=true;
+                }
+                else if(tel_fase==1)
+                {
+                 Fase_2=true;
+                 Fase_1=false;
+                 escolha=true;
+                }
+                else if(tel_fase==2)
+                {
+                 escolha=true;
+                 Fase_2=false;
+                 Fase_1=false;
+                }
+            break;
+           }
+
+        }
+      }
+      if(Fase_1==true){
+        Fase1 nivel_1;
+        nivel_1.Init(false,Player2);
+        Gerenciador.DestroiTudo();
+        nivel_1.Joga_fase();
+      }
+      else if(Fase_2==true){
+        Fase2 nivel_2;
+        nivel_2.Init(false,Player2);
+        Gerenciador.DestroiTudo();
+        nivel_2.Joga_fase();
+      }
+      else if(Fase_1==false && Fase_2==false){
+       ///ainda nao tem
+      }
+
+     }
+    }
+    else if(escolha==true && load ==true){
+        if(DEBUG==0){printf("\n Opcao load escolhida \n");}
+        string fase_salva;
+        GerenciadorArquivo arq;
+        fase_salva=arq.Load_Fase();
+        if(DEBUG==0){printf("\n fase :\n%s",&fase_salva[0]);}
+         if (strcmp(&fase_salva[0],"Fase1")==0)
+            {
+            if(DEBUG==0){printf("\n Carregando fase 1 \n");}
+            Fase1 nivel_A;
+            nivel_A.Init(true,false);
+            nivel_A.Joga_fase();
+            }
+        else if (strcmp(&fase_salva[0],"Fase2")==0)
+            {
+            if(DEBUG==0){printf("\n Carregando fase 2 \n");}
+            Fase2 nivel_B;
+            nivel_B.Init(true,false);
+            nivel_B.Joga_fase();
+            }
+        else if (strcmp(&fase_salva[0],"Fase3")==0)
+            {
+            if(DEBUG==0){printf("\n Carregando fase 3 \n");}
+            }
+        else
+            printf("\n Arquivo de Dados com problemas \n");
+        }
+
     return 0;
 }

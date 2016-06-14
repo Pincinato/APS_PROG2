@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
@@ -50,6 +51,12 @@
 		<Unit filename="Cenario.h" />
 		<Unit filename="Crabmeat.cpp" />
 		<Unit filename="Crabmeat.h" />
+		<Unit filename="Fase.cpp" />
+		<Unit filename="Fase.h" />
+		<Unit filename="Fase1.cpp" />
+		<Unit filename="Fase1.h" />
+		<Unit filename="Fase2.cpp" />
+		<Unit filename="Fase2.h" />
 		<Unit filename="GerenciadorArquivo.cpp" />
 		<Unit filename="GerenciadorArquivo.h" />
 		<Unit filename="GerenciadorGrafico.cpp" />

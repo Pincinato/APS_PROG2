@@ -17,12 +17,9 @@ class GerenciadorArquivo
 private:
 
     FILE *arquivo;
-    int Salva_Fase(/*Fase*/);
+
 
     int Salva_Chefao(/*Chefao c*/);
-
-    void Load_Fase();
-
     void Load_Chefao();
 
 
@@ -41,6 +38,8 @@ public:
     void Load_Inimigo(Inimigo *i);
     int Salva_Cenario( Cenario *c);
     void Load_Cenario(Cenario *c);
+    int Salva_Fase(std::string n);
+    const char * Load_Fase();
 
 };
 

@@ -66,7 +66,7 @@
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 
-1465755786 source:/home/thiago/TeM/Jogo07/Cenario.cpp
+1465846226 source:/home/thiago/TeM/Jogo07/Cenario.cpp
 	"Cenario.h"
 	<stdio.h>
 
@@ -74,7 +74,7 @@
 	"GerenciadorGrafico.h"
 	<string.h>
 
-1465413278 /home/thiago/TeM/Jogo07/GerenciadorGrafico.h
+1465904807 /home/thiago/TeM/Jogo07/GerenciadorGrafico.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
 	<allegro5/allegro_primitives.h>
@@ -87,7 +87,7 @@
 	"Crabmeat.h"
 	<stdio.h>
 
-1465771911 /home/thiago/TeM/Jogo07/Crabmeat.h
+1465848764 /home/thiago/TeM/Jogo07/Crabmeat.h
 	"GerenciadorGrafico.h"
 	"Inimigo.h"
 
@@ -95,13 +95,13 @@
 	<string>
 	"Personagem.h"
 
-1465770936 source:/home/thiago/TeM/Jogo07/GerenciadorArquivo.cpp
+1465907101 source:/home/thiago/TeM/Jogo07/GerenciadorArquivo.cpp
 	"GerenciadorArquivo.h"
 	<string.h>
 	<cstdlib>
 	<stdlib.h>
 
-1465755679 /home/thiago/TeM/Jogo07/GerenciadorArquivo.h
+1465905766 /home/thiago/TeM/Jogo07/GerenciadorArquivo.h
 	<stdio.h>
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
@@ -112,25 +112,25 @@
 	"Crabmeat.h"
 	"Cenario.h"
 
-1465758829 /home/thiago/TeM/Jogo07/Jogador.h
+1465902571 /home/thiago/TeM/Jogo07/Jogador.h
 	"GerenciadorGrafico.h"
 	<iostream>
 	"Personagem.h"
 
-1465414208 source:/home/thiago/TeM/Jogo07/GerenciadorGrafico.cpp
+1465904825 source:/home/thiago/TeM/Jogo07/GerenciadorGrafico.cpp
 	"GerenciadorGrafico.h"
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 
-1465756795 source:/home/thiago/TeM/Jogo07/Inimigo.cpp
+1465908645 source:/home/thiago/TeM/Jogo07/Inimigo.cpp
 	"Inimigo.h"
 
-1465756881 source:/home/thiago/TeM/Jogo07/Jogador.cpp
+1465845823 source:/home/thiago/TeM/Jogo07/Jogador.cpp
 	"Jogador.h"
 	<stdio.h>
 
-1465770998 source:/home/thiago/TeM/Jogo07/main.cpp
+1465908221 source:/home/thiago/TeM/Jogo07/main.cpp
 	"GerenciadorGrafico.h"
 	"Jogador.h"
 	"Crabmeat.h"
@@ -141,6 +141,7 @@
 	<iostream>
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
+	<string>
 
 1465746823 /home/thiago/TeM/Jogo07/Personagem.h
 	<allegro5/allegro.h>
@@ -153,13 +154,13 @@
 1465745468 source:/home/thiago/TeM/Jogo07/Personagem.cpp
 	"Personagem.h"
 
-1465777952 source:/home/thiago/TeM/Jogo07/Fase1.cpp
+1465905695 source:/home/thiago/TeM/Jogo07/Fase1.cpp
 	"Fase1.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 
-1465777801 /home/thiago/TeM/Jogo07/Fase1.h
+1465903122 /home/thiago/TeM/Jogo07/Fase1.h
 	<string.h>
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"
@@ -168,20 +169,22 @@
 	"Cenario.h"
 	"Fase.h"
 
-1465777773 /home/thiago/TeM/Jogo07/Fase.h
+1465905632 /home/thiago/TeM/Jogo07/Fase.h
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"
 	"Crabmeat.h"
 	"Jogador.h"
 	"Personagem.h"
+	<vector>
+	<string>
 
-1465777767 source:/home/thiago/TeM/Jogo07/Fase.cpp
+1465905529 source:/home/thiago/TeM/Jogo07/Fase.cpp
 	"Fase.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 
-1465756049 source:/home/thiago/TeM/Jogo07/Fase2.cpp
+1465908623 source:/home/thiago/TeM/Jogo07/Fase2.cpp
 	"Fase2.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>

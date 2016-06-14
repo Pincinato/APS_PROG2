@@ -31,7 +31,7 @@ public:
     // METODO PARA OBTER A COORDENADA Y DA POSICAO DO PERSONAGEM
     float GetY();
 
-    int GetposX();
+    //int GetposX();
     //const int GetposY();
 
     ALLEGRO_BITMAP* GetBitmap();

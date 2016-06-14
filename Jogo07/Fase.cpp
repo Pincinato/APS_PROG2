@@ -18,70 +18,42 @@ Fase::~Fase(){
  GerenciadorGrafico *g
 }
 */
-void Fase::Init(){
 
-    /// ----------VARIÁVEIS DO JOGO----------
-    fim = false; // VARIAVEL REFERENTE AO LOOP PRINCIPAL DO JOGO
-    bool escolha=false;
-    load=false;
 
-    /// ----------LOOP PRINCIPAL----------
-    // INICIANDO O CONTADOR
-    al_start_timer(Gerenciador.GetTimer());
+void Fase::Transfere(GerenciadorGrafico *Gra, ALLEGRO_EVENT *e,GerenciadorGrafico *Graf, ALLEGRO_EVENT *evento){
 
-    // ESCONDENDO O CURSOR DO MOUSE
-    // al_hide_mouse_cursor(display);
+  Graf=Gra;
+  evento=e;
 
-    /// Teste da tela inicial
-
-    int tel_ini = 0;
-
-    Gerenciador.Tela_inicial(0);
-
-    while(!escolha){
-        al_wait_for_event(Gerenciador.GetFilaEventos(), &ev);
-        if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
-        {
-        switch(ev.keyboard.keycode){
-            case ALLEGRO_KEY_RIGHT:
-            tel_ini++;
-            if(tel_ini>=3)
-                tel_ini=0;
-
-            Gerenciador.Tela_inicial(tel_ini);
-            break;
-
-            case ALLEGRO_KEY_LEFT:
-            tel_ini--;
-            if(tel_ini < 0)
-                tel_ini = 2;
-
-            Gerenciador.Tela_inicial(tel_ini);
-            break;
-
-            case ALLEGRO_KEY_ENTER:
-                if(tel_ini==0)
-                {
-                 escolha=true;
-                }
-                else if(tel_ini==1)
-                {
-                 load=true;
-                 escolha=true;
-                }
-                else if(tel_ini==2)
-                {
-                 escolha=true;
-                 fim=true;
-                }
-            break;
-           }
-
-        }
-    }
-
-/// fim de teste tela pinicial
 }
+
+void Fase::Init(bool l,bool player){
+
+   Gerenciador.Init();
+   al_start_timer(Gerenciador.GetTimer());
+   load=l;
+   player_2=player;
+
+}
+
+void Fase::Destroi(){
+
+    Gerenciador.DestroiTudo();
+
+}
+
+const char * Fase::GetName(){
+
+    return &name[0];
+}
+
+void Fase::SetName(std::string n){
+
+ name.clear();
+ name.append(n);
+ name.append("\0");
+}
+
 
 void Fase::Play(){
 

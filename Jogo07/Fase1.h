@@ -18,15 +18,16 @@ public:
     virtual ~Fase1();
     void Inicia(bool op, int n_jogadores);
     void Joga_fase();
-    void Salva();
     void AjusteY(int Y, Personagem *p);
     void AjusteY_Jogador(int Y, Jogador *j);
+    void Salve();
+    void Load();
 
 private:
     Cenario Cenario01;
     int y_cenario[6]={438,487,438,471,520,471};
-    int x_muda_cenario[6]={0,-18,-172,-358,-1322,-1384};
-    int x_inimigos[2]={-550,-750};
+    int x_muda_cenario[6]={0,-18,-150,-358,-1322,-1384};
+    int x_inimigo1[3]={-432,-708,-902};
 
 };
 

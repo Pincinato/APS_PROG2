@@ -40,7 +40,14 @@ void GerenciadorArquivo::Load_Cenario(Cenario *c){
 void GerenciadorArquivo::Load_Chefao(){
 
 }
-void GerenciadorArquivo::Load_Fase(){
+const char * GerenciadorArquivo::Load_Fase(){
+
+    printf("Carregando dados do inimigo \n");
+    arquivo = fopen("Arquivo_Teste.txt","r");
+    std::string info;
+    fscanf(arquivo,"%s",&info[0]);
+    fclose(arquivo);
+    return &info[0];
 
 }
 
@@ -128,8 +135,19 @@ int GerenciadorArquivo::Salva_Chefao(){
     return 1;
 }
 
-int GerenciadorArquivo::Salva_Fase(){
+int GerenciadorArquivo::Salva_Fase(std::string n){
 
+    printf("Salvando Fase\n");
+    arquivo = fopen("Arquivo_Teste.txt","a");
+    std:: string info;
+    info.clear();
+    info.append(&n[0]);
+    info.append("\n");
+    info.append("\0");
+    printf("escrevendo no arquivo \n");
+    fprintf(arquivo,&info[0]);
+    printf("Fechando o arquivo \n");
+    fclose(arquivo);
     return 1;
 }
 

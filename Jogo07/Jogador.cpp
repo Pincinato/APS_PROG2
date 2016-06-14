@@ -140,9 +140,13 @@ void Jogador::SetSources(bool ev_botao)
 // METODO PARA DESENHAR O JOGADOR
 void Jogador::DesenhaJogador()
 {
-    if(posx <= 300)
+    if(posx <= 300 )
         al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx, posy, NULL);
 
+    /*else if( posx >= 1200){
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx-1200, posy, NULL);
+    }
+    */
     else
         al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, 300, posy, NULL);
 }
