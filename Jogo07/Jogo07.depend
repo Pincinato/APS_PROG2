@@ -126,7 +126,7 @@
 1465908645 source:/home/thiago/TeM/Jogo07/Inimigo.cpp
 	"Inimigo.h"
 
-1465845823 source:/home/thiago/TeM/Jogo07/Jogador.cpp
+1465926284 source:/home/thiago/TeM/Jogo07/Jogador.cpp
 	"Jogador.h"
 	<stdio.h>
 
@@ -154,13 +154,13 @@
 1465745468 source:/home/thiago/TeM/Jogo07/Personagem.cpp
 	"Personagem.h"
 
-1465909556 source:/home/thiago/TeM/Jogo07/Fase1.cpp
+1465927602 source:/home/thiago/TeM/Jogo07/Fase1.cpp
 	"Fase1.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 
-1465911591 /home/thiago/TeM/Jogo07/Fase1.h
+1465927675 /home/thiago/TeM/Jogo07/Fase1.h
 	<string.h>
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"

@@ -29,6 +29,29 @@ void Fase1::Inicia(bool op, int n_jogadores){
 
 }
 
+void Fase1::Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player)
+{
+    int begin_colisao_inimigo_voltando=(x-EnemyA->Getdeslocamento()/2+EnemyA->Getcontrol_posx());
+    int begin_colisao_inimigo_indo=x - (+EnemyA->Getcontrol_posx()-EnemyA->Getdeslocamento()/2);
+/*
+    if(DEBUG==0){printf("Regiao de colisao \n");
+                 printf(" calculo1 =%d \ne 2 = %d\n",Cenario01.GetX()-al_get_bitmap_width(player->Forma)/10,begin_colisao_inimigo_voltando- al_get_bitmap_width(EnemyA->Forma)/2 );}
+        //if(Cenario01.GetX()== x - (+EnemyA->Getcontrol_posx()-EnemyA->Getdeslocamento()/2))
+        if(Cenario01.GetX()+al_get_bitmap_width(player->Forma)/10 == begin_colisao_inimigo_voltando- al_get_bitmap_width(EnemyA->Forma)/2)
+        {
+          if(DEBUG==0){printf("Colidiu inimigo 1 1 if");}
+        }
+          else if(Cenario01.GetX()==begin_colisao_inimigo_indo)
+        {
+           if(DEBUG==0){printf("Colidiu inimigo 1 2 if");}
+        }
+*/
+    printf("posicao jogador %d\n posicao Inimigo%d \n",player->GetposX(),EnemyA->GetposX());
+    if(EnemyA->GetposX()+al_get_bitmap_width(EnemyA->Forma)/4 > 300 && EnemyA->GetposX()-al_get_bitmap_width(EnemyA->Forma)/4<=300)
+        printf("Colisão \n");
+
+}
+
 void Fase1::AjusteY_Jogador(int Y,Jogador *j){
 
     int novo_y;
@@ -191,34 +214,6 @@ if(!fim){
                         }
                         ///Fim do obstáculos.
                         ///Tratamento de colisão personagem 1
-                      if(DEBUG==1){printf("Tratamento de colisão Cenario = %d /n %d \n",x_inimigo[0],x_inimigo[0] -Enemy1.Getdeslocamento()/2);}
-                      if(Cenario01.GetX()<=x_inimigo[0] && Cenario01.GetX() > x_inimigo[0] -Enemy1.Getdeslocamento()/2 )
-                      {
-                         if(DEBUG==0){printf("Regiao de colisao \n");}
-                         if(Cenario01.GetX()==x_inimigo[0] - (+Enemy1.Getcontrol_posx()-Enemy1.Getdeslocamento()/2))
-                          {
-                            if(DEBUG==0){printf("Colidiu inimigo 1");}
-                          }
-                         else if(Cenario01.GetX()==(x_inimigo[0]-Enemy1.Getdeslocamento()/2+Enemy1.Getcontrol_posx()))
-                          {
-                                if(DEBUG==0){printf("Colidiu inimigo 1");}
-                          }
-
-                      }
-                      ///Tratamento de colisão personagem 2
-                      if(Cenario01.GetX()<=-708 && Cenario01.GetX() > -432-(Enemy2.Getdeslocamento()) ){
-                        if(Player1.GetposX()==Enemy2.GetposX())
-                            if(DEBUG==0){printf("Colidiu inimigo 2");}
-                      }
-                      ///Tratamento de colisão personagem 3
-                      if(Cenario01.GetX()<=-902 && Cenario01.GetX() > -432-(Enemy3.Getdeslocamento()) ){
-                        if(Player1.GetposX()==Enemy3.GetposX())
-                            if(DEBUG==0){printf("Colidiu inimigo 3");}
-
-                      }
-
-
-
                      }
                 }
 
@@ -248,6 +243,20 @@ if(!fim){
 
         Cenario01.DesenhaCenario();
         if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+         if(DEBUG==1){printf("Tratamento de colisão Cenario \n");}
+        if(Cenario01.GetX()<=x_inimigo[0] && Cenario01.GetX() > x_inimigo[0] -Enemy1.Getdeslocamento()/2-al_get_bitmap_width(Enemy1.Forma)/2 )
+            {
+            Tratamento_colisao(&Enemy1,x_inimigo[0],&Player1);
+            }
+        else if(Cenario01.GetX()<=x_inimigo[1] && Cenario01.GetX() > x_inimigo[1] -Enemy2.Getdeslocamento()/2-al_get_bitmap_width(Enemy2.Forma)/2 )
+            {
+            Tratamento_colisao(&Enemy2,x_inimigo[1],&Player1);
+            }
+        else if(Cenario01.GetX()<=x_inimigo[2] && Cenario01.GetX() > x_inimigo[2] -Enemy3.Getdeslocamento()/2-al_get_bitmap_width(Enemy3.Forma)/2 )
+            {
+            Tratamento_colisao(&Enemy3,x_inimigo[2],&Player1);
+            }
+        ///Fim do tratamento de colisoes inimigos
         Player1.DesenhaJogador();
         Enemy1.DesenhaPersonagem();
         Enemy2.DesenhaPersonagem();
