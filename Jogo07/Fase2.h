@@ -15,7 +15,7 @@ public:
     Fase2();
     virtual ~Fase2();
     void Inicia(bool op, int n_jogadores);
-    void Joga_fase();
+    bool Joga_fase();
     void Salva();
     void AjusteY(int Y, Personagem *p);
     void AjusteY_Jogador(int Y, Jogador *j);

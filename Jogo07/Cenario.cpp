@@ -30,9 +30,9 @@ Cenario::~Cenario()
 // METODO PARA CARREGAR A IMAGEM DO CENARIO
 void Cenario::CarregaImagem(char * Imagem)
 {
-    printf("Carrengando imagem cenario \n");
+    //printf("Carrengando imagem cenario \n");
     cenario = al_load_bitmap(Imagem);
-    printf("Carrengou imagem cenario \n");
+    //printf("Carrengou imagem cenario \n");
 
 }
 

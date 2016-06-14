@@ -81,6 +81,7 @@ public:
     // PERGUNTAR AO PROFESSOR
     void DestroiTudo();
     void Init();
+    int estado=1;
 };
 
 #endif // GERENCIADORGRAFICO_H_INCLUDED

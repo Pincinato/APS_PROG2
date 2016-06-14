@@ -32,6 +32,7 @@ void Fase1::Inicia(bool op, int n_jogadores){
 void Fase1::Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player)
 {
     //printf("posicao jogador %d\n posicao Inimigo%d \n",player->GetposX(),EnemyA->GetposX());
+   if(EnemyA->vivo){
     if(EnemyA->GetposX()+al_get_bitmap_width(EnemyA->Forma)/4 > 300 && EnemyA->GetposX()-al_get_bitmap_width(EnemyA->Forma)/4<=300)
         {
         if(DEBUG==0){printf("Colisão \n");}
@@ -42,6 +43,8 @@ void Fase1::Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player)
          else
             player->vivo=false;
         }
+
+    }
 }
 
 void Fase1::AjusteY_Jogador(int Y,Jogador *j){
@@ -71,9 +74,10 @@ void Fase1::Load(){
 
 }
 
-void Fase1::Joga_fase(){
+bool Fase1::Joga_fase(){
 
     fim=false;
+    bool passou =false;
   //  Init();
 
     int i=0;
@@ -178,23 +182,7 @@ if(!fim){
                       Enemy1.Ajusteposx();
                       Enemy2.Ajusteposx();
                       Enemy3.Ajusteposx();
-                    /*  if(Cenario01.GetX()== (x_inimigos[0]-460))
-                        {
-                        Enemy1.SetposX(460);
-                        Enemy1.SetControl_posx(0);
-                        Enemy1.SetDirecao(0);
-                        AjusteY(y_cenario[3],&Enemy1);
-                        if(DEBUG==0){printf(" inimigo 1 posicao %d",y_cenario[3]);}
-                        }
-                      else if(Cenario01.GetX()== (x_inimigos[1]-460))
-                        {
-                        Enemy2.SetposX(460);
-                        Enemy2.SetControl_posx(0);
-                        Enemy2.SetDirecao(0);
-                        AjusteY(y_cenario[3],&Enemy2);
-                        if(DEBUG==0){printf(" inimigo 1 posicao %d",y_cenario[3]);}
-                        }
-*/                     ///Verifica obstáculos
+                       ///Verifica obstáculos
                        for(i=1 ; i < 5;i++){
                         if(Cenario01.GetX()<= x_muda_cenario[i] && Cenario01.GetX() > x_muda_cenario[i+1]){
                             AjusteY_Jogador(y_cenario[i],&Player1);
@@ -249,6 +237,19 @@ if(!fim){
             Tratamento_colisao(&Enemy3,x_inimigo[2],&Player1);
             }
         ///Fim do tratamento de colisoes inimigos
+        ///Final da Fase
+        if(Cenario01.GetX()<=-1200)
+            {
+            fim=true;
+            passou=true;
+            }
+        ///
+        if(Player1.vivo==false)
+        {
+        ///chama ima imagem de game over
+            fim=true;
+            passou=false;
+        }
         Player1.DesenhaJogador();
         if(Enemy1.vivo)
             Enemy1.DesenhaPersonagem();
@@ -268,8 +269,9 @@ if(!fim){
     Enemy1.DestroiTudo();
     Enemy2.DestroiTudo();
     Enemy3.DestroiTudo();
-    Gerenciador.DestroiTudo();
+    //Gerenciador.DestroiTudo();
     Cenario01.DestroiTudo();
+    return passou;
     //al_destroy_sample(sample);
    // Fase teste;
    // teste.Load_Jogo();

@@ -145,11 +145,12 @@ void GerenciadorGrafico::RegistraSources()
 // PERGUNTAR AO PROFESSOR
 void GerenciadorGrafico::DestroiTudo()
 {
+    al_destroy_bitmap(tela_inicial); // LIBERA A MEMORIA ALOCADA
     al_destroy_display(display); // LIBERA A MEMORIA ALOCADA
     al_destroy_event_queue(FilaEventos); // LIBERA A MEMORIA ALOCADA
     al_destroy_timer(timer); // LIBERA A MEMORIA ALOCADA
     al_destroy_font(fonte); // LIBERA A MEMORIA ALOCADA
-    al_destroy_bitmap(tela_inicial); // LIBERA A MEMORIA ALOCADA
+    estado=0;
 }
 
 void GerenciadorGrafico::Pause(int o){

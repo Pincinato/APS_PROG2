@@ -50,8 +50,9 @@ void Fase2::AjusteY(int Y,Personagem *p){
 
 }
 
-void Fase2::Joga_fase(){
+bool Fase2::Joga_fase(){
 
+    printf("Começando fase 2 \n");
     fim=false;
     /// ----------VARIÁVEIS DO JOGO----------
    /// ----------LOOP PRINCIPAL----------
@@ -200,6 +201,7 @@ if(!fim){
     //al_destroy_sample(sample);
    // Fase teste;
    // teste.Load_Jogo();
+   return false;
     }
 }
 

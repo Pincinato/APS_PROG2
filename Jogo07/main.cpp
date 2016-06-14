@@ -217,19 +217,25 @@ int main()
         Fase1 nivel_1;
         nivel_1.Init(false,Player2);
         Gerenciador.DestroiTudo();
-        nivel_1.Joga_fase();
+        if(nivel_1.Joga_fase()){
+            Fase_2=true;
+            if(DEBUG==0){printf("Passou de fase \n");}
+            }
       }
-      else if(Fase_2==true){
+      if(Fase_2==true){
         Fase2 nivel_2;
         nivel_2.Init(false,Player2);
-        Gerenciador.DestroiTudo();
-        nivel_2.Joga_fase();
+        if(Gerenciador.estado==1)
+            Gerenciador.DestroiTudo();
+        if(nivel_2.Joga_fase()){
+            Fase_1=false;
+            Fase_2=false;
+            }
       }
-      else if(Fase_1==false && Fase_2==false){
+      if(Fase_1==false && Fase_2==false){
        ///ainda nao tem
-      }
-
      }
+    }
     }
     else if(escolha==true && load ==true){
         if(DEBUG==0){printf("\n Opcao load escolhida \n");}
@@ -242,22 +248,29 @@ int main()
             if(DEBUG==0){printf("\n Carregando fase 1 \n");}
             Fase1 nivel_A;
             nivel_A.Init(true,false);
-            nivel_A.Joga_fase();
+            if(Gerenciador.estado==1)
+                Gerenciador.DestroiTudo();
+            if(nivel_A.Joga_fase()){
+             /// fazer cair no iff de baixo
+                }
             }
-        else if (strcmp(&fase_salva[0],"Fase2")==0)
+        if (strcmp(&fase_salva[0],"Fase2")==0)
             {
             if(DEBUG==0){printf("\n Carregando fase 2 \n");}
             Fase2 nivel_B;
             nivel_B.Init(true,false);
-            nivel_B.Joga_fase();
+            if(Gerenciador.estado==1)
+                Gerenciador.DestroiTudo();
+            if(nivel_B.Joga_fase())
+            {}
+             /// fazer cair no iff de baixo
             }
-        else if (strcmp(&fase_salva[0],"Fase3")==0)
+        if (strcmp(&fase_salva[0],"Fase3")==0)
             {
             if(DEBUG==0){printf("\n Carregando fase 3 \n");}
             }
         else
             printf("\n Arquivo de Dados com problemas \n");
         }
-
     return 0;
 }

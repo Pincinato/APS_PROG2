@@ -17,7 +17,7 @@ public:
     Fase1();
     virtual ~Fase1();
     void Inicia(bool op, int n_jogadores);
-    void Joga_fase();
+    bool Joga_fase();
     void AjusteY(int Y, Personagem *p);
     void AjusteY_Jogador(int Y, Jogador *j);
     void Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player);
