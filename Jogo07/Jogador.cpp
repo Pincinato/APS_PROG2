@@ -71,28 +71,37 @@ void Jogador::SetX()
 
     else if(direcao == DIREITA)
         posx += velocidade;
-    if (pulando == 1)
+
+}
+
+int Jogador::Pulo(){
+
+  int posemy;
+  if (pulando == 1  || pulando==2)
     {
-        if(DEBUG==1){printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");}
-        posy_pulo=posy_pulo+1;
-        if(posy_pulo>=posy+altura_pulo)
+        if(DEBUG==1){printf("pulando 2\n");}
+        posy_pulo=posy_pulo-2;
+        if(posy_pulo<=posy-altura_pulo){
             pulando=3;
-        else
+            if(DEBUG==1){printf("pulando = 3 \n");}
+            }
+        else{
             pulando=2;
-   }
-   else if (pulando==3)
+            if(DEBUG==1){printf("pulando = 2\n");}
+            }
+     posemy=posy_pulo;
+     }
+    else if (pulando==3)
     {
-        posy_pulo=posy_pulo-1;
-        if(posy_pulo<=posy)
+        if(DEBUG==1){printf("pulando = 3 descendo\n");}
+        posy_pulo=posy_pulo+2;
+        if(posy_pulo>=posy)
         {
             pulando=0;
         }
+     posemy=posy_pulo;
     }
+    return posemy;
 
 }
 
@@ -129,29 +138,33 @@ void Jogador::SetSources(bool ev_botao)
         ataque=false;
         }
     else if (direcao==CIMA){
-        if(pulando==0)
+        if(pulando==0){
             pulando=1;
-
-        if(DEBUG==1){printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");
-        printf("pulando\n");}
+            if(DEBUG==0){printf("pulando 1 \n");}
+            }
         }
 }
 
 // METODO PARA DESENHAR O JOGADOR
 void Jogador::DesenhaJogador()
 {
+    int posemy=0;
+    if(pulando!=0){
+        posemy=Pulo();
+        }
+    else
+        posemy=posy;
+
     if(posx <= 300 )
-        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx, posy, NULL);
+
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx, posemy, NULL);
 
     /*else if( posx >= 1200){
         al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, posx-1200, posy, NULL);
     }
     */
     else{
-        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, 300, posy, NULL);
+        al_draw_bitmap_region(Forma, sourceX, sourceY * al_get_bitmap_height(Forma) / 3, 52, 63, 300, posemy, NULL);
 
     }
 }
@@ -169,6 +182,16 @@ void Jogador::MoveX(){
 void Jogador::SetposY(const int y){
 
  posy=y;
+}
+
+const int Jogador::Getposy_pulo(){
+
+    return posy_pulo;
+}
+
+const int Jogador::GetPulando(){
+
+    return pulando;
 }
 
 const int Jogador::GetId(){

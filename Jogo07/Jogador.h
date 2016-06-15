@@ -55,6 +55,7 @@ public:
 
     // METODO PARA OBTER A DIRECAO
     int GetDirecao();
+    int Pulo();
 
     // METODO PARA ATUALIZAR OS SPRITES DO JOGADOR
     void SetSources(bool ev_botao);
@@ -67,7 +68,8 @@ public:
     void MoveX();
     static int id;
     const int GetId();
-
+    const int GetPulando();
+    const int Getposy_pulo();
     bool ataque =false;
 };
 

@@ -2,6 +2,7 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 #include <iostream>
+#include <string>
 
 
 #define DEBUG 0
@@ -35,13 +36,32 @@ void Fase1::Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player)
    if(EnemyA->vivo){
     if(EnemyA->GetposX()+al_get_bitmap_width(EnemyA->Forma)/4 > 300 && EnemyA->GetposX()-al_get_bitmap_width(EnemyA->Forma)/4<=300)
         {
-        if(DEBUG==0){printf("Colisão \n");}
-         if(player->ataque==true)
-         {
-            EnemyA->vivo=false;
-         }
-         else
-            player->vivo=false;
+        if(player->GetPulando()!=0){
+            if(DEBUG==0){printf("posicao player em y = %d \n  posicao do inimigo em y %d \n",player->Getposy_pulo()+al_get_bitmap_height(player->Forma)/6,EnemyA->GetposY()-al_get_bitmap_height(EnemyA->Forma)/2);}
+            if(player->Getposy_pulo()+al_get_bitmap_height(player->Forma)/6>=EnemyA->GetposY()-al_get_bitmap_height(EnemyA->Forma)/2)
+            {
+                if(DEBUG==0){printf("Colisão por cima \n");}
+                if(player->ataque==true)
+                {
+                    EnemyA->vivo=false;
+                }
+                else if(strcmp(EnemyA->Get_Name(),"Inimigo-Crabmeat")==0)
+                    player->vivo=false;
+                else if(strcmp(EnemyA->Get_Name(),"Inimigo-Crabmeat")!=0)
+                    EnemyA->vivo=false;
+            }
+        }
+        else{
+            if(DEBUG==0){printf("Colisão \n");}
+            if(player->ataque==true)
+            {
+                EnemyA->vivo=false;
+            }
+            else
+            {
+                player->vivo=false;
+            }
+          }
         }
 
     }
