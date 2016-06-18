@@ -11,7 +11,7 @@ Fase1::Fase1():Fase(){
 
  std::string Imagem;
  Imagem.clear();
- Imagem.append("/home/thiago/TeM/Imagem_Cenario/cenario01_2.png");
+ Imagem.append("/home/thiago/TeM/Imagem_Cenario/cenario01_3.png");
  Imagem.append("\0");
  Cenario01.CarregaImagem(&Imagem[0]);
  std::string n;
@@ -79,7 +79,7 @@ void Fase1::AjusteY(int Y,Personagem *p){
 
     int novo_y;
     if(DEBUG==1){printf("Altura do sonic %d ",al_get_bitmap_height(p->Forma));}
-    novo_y =Y-al_get_bitmap_height(p->Forma)/2;//Imagem do sonic é uma matris de 3 linhas
+    novo_y =Y-10-al_get_bitmap_height(p->Forma)/2;//Imagem do sonic é uma matris de 3 linhas
     p->SetposY(novo_y);
 
 }
@@ -106,6 +106,9 @@ if(!fim){
     if(DEBUG==1){printf("Criando jogador \n");}
     Jogador Player1;
     AjusteY_Jogador(y_cenario[0],&Player1);
+    Jogador Player2;
+    if(player_2==true)
+        AjusteY_Jogador(y_cenario[0],&Player2);
     if(DEBUG==1){printf("Criando Inimigo \n");}
     Crabmeat Enemy1(900);
     AjusteY(y_cenario[3],&Enemy1);
@@ -114,7 +117,7 @@ if(!fim){
     Enemy2.SetDeslocamento(270);
     AjusteY(y_cenario[3],&Enemy2);
     inimigos.push_back(&Enemy2);
-    Crabmeat Enemy3(1300);
+    Crabmeat Enemy3(1400);
     Enemy3.SetDeslocamento(170);
     AjusteY(y_cenario[3],&Enemy3);
     inimigos.push_back(&Enemy3);
@@ -135,6 +138,8 @@ if(!fim){
             arquivo.Load_Inimigo(inimigos[i]);
         if(DEBUG==1){printf("Carregando Jogador \n");}
             arquivo.Load_Jogador(&Player1);
+            if(player_2==true)
+                arquivo.Load_Jogador(&Player2);
         if(DEBUG==1){printf("Carregando Cenario \n");}
             arquivo.Load_Cenario(&Cenario01);
 
@@ -157,6 +162,8 @@ if(!fim){
         arquivo.Salva_jogo();
         arquivo.Salva_Fase(name);
         arquivo.Salva_Jogador(Player1);
+        if(player_2==true)
+            arquivo.Salva_Jogador(Player1);
         for(int i=0; i<3;i++)
             arquivo.Salva_Inimigo(inimigos[i]);
         arquivo.Salva_Cenario(&Cenario01);
@@ -203,20 +210,19 @@ if(!fim){
                       Enemy2.Ajusteposx();
                       Enemy3.Ajusteposx();
                        ///Verifica obstáculos
-                       for(i=1 ; i < 5;i++){
+                       for(i=1 ; i < 7;i++){
                         if(Cenario01.GetX()<= x_muda_cenario[i] && Cenario01.GetX() > x_muda_cenario[i+1]){
                             AjusteY_Jogador(y_cenario[i],&Player1);
-                            i=6;
+                            i=8;
                             }
                         }
-                      if (Cenario01.GetX() <= x_muda_cenario[5] ){
-                        AjusteY_Jogador(y_cenario[5],&Player1);
+                      if (Cenario01.GetX() <= x_muda_cenario[7] ){
+                        AjusteY_Jogador(y_cenario[7],&Player1);
                         }
                         ///Fim do obstáculos.
                         ///Tratamento de colisão personagem 1
                      }
                 }
-
             if(DEBUG==1){cout << "Jogador: x = " << Player1.GetX() << endl;
                          cout << "Inimigo: x1 = " << Enemy1.GetX() << endl;
                          cout << "Inimigo: x2 = " << Enemy2.GetX() << endl;
@@ -229,6 +235,8 @@ if(!fim){
                 if(DEBUG==1){printf("Colidiu \n");}
             }
             Player1.SetSources(botaoprecionado);
+            if(player_2==true)
+                Player2.SetSources(botaoprecionado);
             Enemy1.SetX();
             Enemy1.SetSources();
             Enemy2.SetX();
@@ -242,7 +250,7 @@ if(!fim){
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
         Cenario01.DesenhaCenario();
-        if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+        if(DEBUG ==0) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
          if(DEBUG==1){printf("Tratamento de colisão Cenario \n");}
         if(Cenario01.GetX()<=x_inimigo[0] && Cenario01.GetX() > x_inimigo[0] -Enemy1.Getdeslocamento()/2-al_get_bitmap_width(Enemy1.Forma)/2 )
             {
@@ -271,6 +279,8 @@ if(!fim){
             passou=false;
         }
         Player1.DesenhaJogador();
+        if(player_2==true)
+            Player2.DesenhaJogador();
         if(Enemy1.vivo)
             Enemy1.DesenhaPersonagem();
         if(Enemy2.vivo)
@@ -286,6 +296,7 @@ if(!fim){
 
     // PERGUNTAR AO PROFESSOR
     Player1.DestroiTudo();
+    Player2.DestroiTudo();
     Enemy1.DestroiTudo();
     Enemy2.DestroiTudo();
     Enemy3.DestroiTudo();
@@ -297,3 +308,30 @@ if(!fim){
    // teste.Load_Jogo();
     }
 }
+
+
+/*
+
+
+
+                if(player_2==true){
+                    if(ALLEGRO_KEY_A || ALLEGRO_KEY_D)
+                    {
+                    Player2.SetX();
+                        if(ALLEGRO_KEY_A)
+                            Player2.SetDirecao(ESQUERDA);
+                        else
+                            Player2.SetDirecao(DIREITA);
+                    }
+                    else if(ALLEGRO_KEY_W)
+                    {
+                        Player2.SetDirecao(CIMA);
+                    }
+                    else if(ALLEGRO_KEY_S)
+                    {
+                        Player2.SetDirecao(BAIXO);
+                    }
+            }
+
+
+            */

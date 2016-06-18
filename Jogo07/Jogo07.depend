@@ -154,14 +154,14 @@
 1465927953 source:/home/thiago/TeM/Jogo07/Personagem.cpp
 	"Personagem.h"
 
-1466021866 source:/home/thiago/TeM/Jogo07/Fase1.cpp
+1466035740 source:/home/thiago/TeM/Jogo07/Fase1.cpp
 	"Fase1.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 	<string>
 
-1465930400 /home/thiago/TeM/Jogo07/Fase1.h
+1466035201 /home/thiago/TeM/Jogo07/Fase1.h
 	<string.h>
 	"GerenciadorArquivo.h"
 	"GerenciadorGrafico.h"
