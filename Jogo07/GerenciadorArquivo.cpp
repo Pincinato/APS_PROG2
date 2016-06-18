@@ -30,7 +30,7 @@ void GerenciadorArquivo::Load_Cenario(Cenario *c){
     do{
     if(fgets(&info[0],100,arquivo) != "\n"){}
      printf("%s",&info[0]);
-    }while(strcmp(&info[0],"Cenario \n")!=0 &&  strcmp(&info[0],"EOF")!=0 );
+    }while(strcmp(&info[0],"Cenario \n")!=0 &&  strcmp(&info[0],"!!!")!=0 );
     fscanf(arquivo,"%s",&info[0]);
     printf(" ultima posicao x do Cenario %s \n",&info[0]);
     c->SetposX(stoi(info));
@@ -67,7 +67,7 @@ void GerenciadorArquivo::Load_Inimigo(Inimigo *i){
     do{
     if(fgets(&info_inimigo[0],100,arquivo) != "\n"){}
      printf("%s",&info_inimigo[0]);
-    }while(strcmp(&info_inimigo[0],&name_inimigo[0])!=0 &&  strcmp(&info_inimigo[0],"EOF")!=0 );
+    }while(strcmp(&info_inimigo[0],&name_inimigo[0])!=0 &&  strcmp(&info_inimigo[0],"!!!")!=0 );
     fscanf(arquivo,"%s",&info_inimigo[0]);
     printf("ultima posicao do inimigo %s \n",&info_inimigo[0]);
     i->SetposX(stoi(info_inimigo));
@@ -103,7 +103,7 @@ void GerenciadorArquivo::Load_Jogador(Jogador *j){
     do{
     if(fgets(&info_jogador[0],100,arquivo) != "\n"){}
      printf("%s",&info_jogador[0]);
-    }while(strcmp(&info_jogador[0],&name_jogador[0])!=0 &&  strcmp(&info_jogador[0],"EOF")!=0 );
+    }while(strcmp(&info_jogador[0],&name_jogador[0])!=0 &&  strcmp(&info_jogador[0],"!!!")!=0 );
     fscanf(arquivo,"%s",&info_jogador[0]);
     printf(" ultima posicao x do player 1 %s \n",&info_jogador[0]);
     j->SetposX(stoi(info_jogador));
@@ -125,6 +125,7 @@ int GerenciadorArquivo::Salva_Cenario(Cenario *c){
     printf("escrevendo no arquivo \n");
     fprintf(arquivo,"Cenario \n");
     fprintf(arquivo,"%s",&info[0]);
+    fprintf(arquivo,"!!!",&info[0]);
     printf("Fechando o arquivo \n");
     fclose(arquivo);
     return 1;

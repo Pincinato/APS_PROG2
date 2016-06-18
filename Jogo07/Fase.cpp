@@ -84,9 +84,19 @@ void Fase::Play(){
                 DIRECAO_F=CIMA;
                 break;
 
+                case ALLEGRO_KEY_W:
+                botaoprecionado2 = true;
+                DIRECAO_P2=CIMA;
+                break;
+
                 case ALLEGRO_KEY_DOWN:
                 botaoprecionado= true;
                 DIRECAO_F=BAIXO;
+                break;
+
+                case ALLEGRO_KEY_S:
+                botaoprecionado2 = true;
+                DIRECAO_P2=BAIXO;
                 break;
 
                 case ALLEGRO_KEY_RIGHT:
@@ -94,9 +104,19 @@ void Fase::Play(){
                 DIRECAO_F=DIREITA;
                 break;
 
+                case ALLEGRO_KEY_D:
+                botaoprecionado2 = true;
+                DIRECAO_P2=DIREITA;
+                break;
+
                 case ALLEGRO_KEY_LEFT:
                 botaoprecionado = true;
                 DIRECAO_F=ESQUERDA;
+                break;
+
+                case ALLEGRO_KEY_A:
+                botaoprecionado2 = true;
+                DIRECAO_P2=ESQUERDA;
                 break;
 
                 case ALLEGRO_KEY_SPACE:

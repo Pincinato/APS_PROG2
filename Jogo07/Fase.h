@@ -38,6 +38,8 @@ protected:
     bool player_2;
     bool botaoprecionado;
     int DIRECAO_F;
+    int DIRECAO_P2;
+    bool botaoprecionado2;
     std::string name;
 
 

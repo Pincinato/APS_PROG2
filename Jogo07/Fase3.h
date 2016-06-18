@@ -1,6 +1,7 @@
 
-#ifndef FASE1_H_INCLUDED
-#define FASE1_H_INCLUDED
+
+#ifndef Fase3_H_INCLUDED
+#define Fase3_H_INCLUDED
 #include <string.h>
 #include "GerenciadorArquivo.h"
 #include "GerenciadorGrafico.h"
@@ -9,13 +10,11 @@
 #include "Cenario.h"
 #include "Fase.h"
 
-
-
-class Fase1 : public Fase
+class Fase3 : public Fase
 {
 public:
-    Fase1();
-    virtual ~Fase1();
+    Fase3();
+    virtual ~Fase3();
     void Inicia(bool op, int n_jogadores);
     bool Joga_fase();
     void AjusteY(int Y, Personagem *p);
@@ -26,12 +25,12 @@ public:
 
 private:
     Cenario Cenario01;
-    int y_cenario[8]={438,487,438,487,438,471,520,471};
-    int x_muda_cenario[8]={0,-118,-158,-214,-252,-358,-902,-964};//-1322,-1384};
-    int x_obstaculo[4]={-118,-214,-902};
-    int x_inimigo[3]={-510,-660,-980};
-
+    int y_cenario[15]={420,435,470,460,470,460,470,460,470,460,470,460,470,435,420};// nivel2 457 pedra 466 lava 470
+    int x_muda_cenario[15]={0,-44,-86,-102,-128,-148,-176,-194,-224,-240,-286,-318,-374,-408,-596}; //16
+    const int x_obstaculo[6]={-86,-128,-176,-224,-286,-374};
+    int x_inimigo[5]={-668,-698,-820,-838,-880};
 };
 
 #endif
+
 

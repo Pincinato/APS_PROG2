@@ -8,6 +8,7 @@
 #include "Cenario.h"
 #include "Fase1.h"
 #include "Fase2.h"
+#include "Fase3.h"
 
 #include <iostream>
 #include <allegro5/allegro_audio.h>
@@ -233,7 +234,11 @@ int main()
             }
       }
       if(Fase_1==false && Fase_2==false){
-       ///ainda nao tem
+        Fase3 nivel_3;
+        nivel_3.Init(false,Player2);
+        if(Gerenciador.estado==1)
+            Gerenciador.DestroiTudo();
+        nivel_3.Joga_fase();
      }
     }
     }
@@ -252,6 +257,8 @@ int main()
                 Gerenciador.DestroiTudo();
             if(nivel_A.Joga_fase()){
              /// fazer cair no iff de baixo
+             fase_salva.clear();
+             fase_salva.append("Fase2");
                 }
             }
         if (strcmp(&fase_salva[0],"Fase2")==0)
@@ -262,12 +269,20 @@ int main()
             if(Gerenciador.estado==1)
                 Gerenciador.DestroiTudo();
             if(nivel_B.Joga_fase())
-            {}
-             /// fazer cair no iff de baixo
+            {
+             fase_salva.clear();
+             fase_salva.append("Fase3");
+            }
+
             }
         if (strcmp(&fase_salva[0],"Fase3")==0)
             {
             if(DEBUG==0){printf("\n Carregando fase 3 \n");}
+            Fase3 nivel_C;
+            nivel_C.Init(true,false);
+            if(Gerenciador.estado==1)
+                Gerenciador.DestroiTudo();
+            nivel_C.Joga_fase();
             }
         else
             printf("\n Arquivo de Dados com problemas \n");
