@@ -77,7 +77,7 @@ void Fase2::AjusteY_Jogador(int Y,Jogador *j){
     j->SetposY(novo_y);
     for(i=0;i<3;i++)
         {
-         if(DEBUG==0){printf("x_obstaculo %d \n",x_obstaculo[i]);}
+         if(DEBUG==1){printf("x_obstaculo %d \n",x_obstaculo[i]);}
             if(Cenario01.GetX()<x_obstaculo[i] && Cenario01.GetX()>=x_obstaculo[i+1])
                {
                aux=i;

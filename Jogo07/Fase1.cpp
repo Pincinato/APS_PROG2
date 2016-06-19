@@ -78,15 +78,19 @@ void Fase1::AjusteY_Jogador(int Y,Jogador *j){
     for(i=0;i<2;i++)
         {
             if(Cenario01.GetX()<x_obstaculo[i] && Cenario01.GetX()>=x_obstaculo[i+1])
+            {
                 aux=i;
+                i=3;
+            }
         }
     if(i==2)
         aux=2;
+    printf("aux %d \n x = %d \n posição cenario %d \n ", aux,x_obstaculo[aux],Cenario01.GetX());
     if(Cenario01.GetX()<= x_obstaculo[aux] && Cenario01.GetX() > x_obstaculo[aux]-44)
      if(j->GetposX() >= 60 && j->GetPulando()==0)
     {
         j->DesenhaJogador();
-        usleep(50);
+        usleep(10);
         j->vivo=false;
 
     }
@@ -294,7 +298,7 @@ if(!fim){
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
         Cenario01.DesenhaCenario();
-        if(DEBUG ==0) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+        if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
          if(DEBUG==1){printf("Tratamento de colisão Cenario \n");}
         if(Cenario01.GetX()<=x_inimigo[0] && Cenario01.GetX() > x_inimigo[0] -Enemy1.Getdeslocamento()/2-al_get_bitmap_width(Enemy1.Forma)/2 )
             {

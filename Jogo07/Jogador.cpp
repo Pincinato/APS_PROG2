@@ -140,7 +140,7 @@ void Jogador::SetSources(bool ev_botao)
     else if (direcao==CIMA){
         if(pulando==0){
             pulando=1;
-            if(DEBUG==0){printf("pulando 1 \n");}
+            if(DEBUG==1){printf("pulando 1 \n");}
             }
         }
 }
