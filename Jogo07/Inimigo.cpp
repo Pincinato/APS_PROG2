@@ -120,4 +120,9 @@ void Inimigo::SetControl_posx(const int control){
     control_posx=control;
 }
 
+void Inimigo::DesenhaPersonagem()
+{
+    printf("Inimigo não possui forma \n");
+}
+
 int Inimigo::id=0;

@@ -83,7 +83,7 @@
 	<allegro5/allegro_ttf.h>
 	<iostream>
 
-1465776752 source:/home/thiago/TeM/Jogo07/Crabmeat.cpp
+1466306880 source:/home/thiago/TeM/Jogo07/Crabmeat.cpp
 	"Crabmeat.h"
 	<stdio.h>
 
@@ -91,17 +91,17 @@
 	"GerenciadorGrafico.h"
 	"Inimigo.h"
 
-1465757428 /home/thiago/TeM/Jogo07/Inimigo.h
+1466307810 /home/thiago/TeM/Jogo07/Inimigo.h
 	<string>
 	"Personagem.h"
 
-1466282413 source:/home/thiago/TeM/Jogo07/GerenciadorArquivo.cpp
+1466307355 source:/home/thiago/TeM/Jogo07/GerenciadorArquivo.cpp
 	"GerenciadorArquivo.h"
 	<string.h>
 	<cstdlib>
 	<stdlib.h>
 
-1465905766 /home/thiago/TeM/Jogo07/GerenciadorArquivo.h
+1466307366 /home/thiago/TeM/Jogo07/GerenciadorArquivo.h
 	<stdio.h>
 	<allegro5/allegro.h>
 	<allegro5/allegro_native_dialog.h>
@@ -123,26 +123,15 @@
 	<stdio.h>
 	<stdlib.h>
 
-1465908645 source:/home/thiago/TeM/Jogo07/Inimigo.cpp
+1466307777 source:/home/thiago/TeM/Jogo07/Inimigo.cpp
 	"Inimigo.h"
 
-1466021103 source:/home/thiago/TeM/Jogo07/Jogador.cpp
+1466306972 source:/home/thiago/TeM/Jogo07/Jogador.cpp
 	"Jogador.h"
 	<stdio.h>
 
-1466285327 source:/home/thiago/TeM/Jogo07/main.cpp
-	"GerenciadorGrafico.h"
-	"Jogador.h"
-	"Crabmeat.h"
-	"GerenciadorArquivo.h"
-	"Cenario.h"
-	"Fase1.h"
-	"Fase2.h"
-	"Fase3.h"
-	<iostream>
-	<allegro5/allegro_audio.h>
-	<allegro5/allegro_acodec.h>
-	<string>
+1466308142 source:/home/thiago/TeM/Jogo07/main.cpp
+	"Principal.h"
 
 1465928086 /home/thiago/TeM/Jogo07/Personagem.h
 	<allegro5/allegro.h>
@@ -155,7 +144,7 @@
 1465927953 source:/home/thiago/TeM/Jogo07/Personagem.cpp
 	"Personagem.h"
 
-1466277530 source:/home/thiago/TeM/Jogo07/Fase1.cpp
+1466307404 source:/home/thiago/TeM/Jogo07/Fase1.cpp
 	"Fase1.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
@@ -186,7 +175,7 @@
 	<allegro5/allegro_acodec.h>
 	<iostream>
 
-1466281954 source:/home/thiago/TeM/Jogo07/Fase2.cpp
+1466307560 source:/home/thiago/TeM/Jogo07/Fase2.cpp
 	"Fase2.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
@@ -202,12 +191,13 @@
 	"Cenario.h"
 	"Fase.h"
 
-1466289486 source:/home/thiago/TeM/Jogo07/Fase3.cpp
+1466307551 source:/home/thiago/TeM/Jogo07/Fase3.cpp
 	"Fase3.h"
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 	<iostream>
 	<string>
+	<list>
 
 1466289603 /home/thiago/TeM/Jogo07/Fase3.h
 	<string.h>
@@ -217,4 +207,12 @@
 	"Jogador.h"
 	"Cenario.h"
 	"Fase.h"
+
+1466308261 /home/thiago/TeM/Jogo07/Principal.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
 

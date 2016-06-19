@@ -180,9 +180,9 @@ if(!fim){
         Salve();
         arquivo.Salva_jogo();
         arquivo.Salva_Fase(name);
-        arquivo.Salva_Jogador(Player1);
+        arquivo.Salva_Jogador(&Player1);
         if(player_2==true)
-            arquivo.Salva_Jogador(Player1);
+            arquivo.Salva_Jogador(&Player2);
         for(int i=0; i<3;i++)
             arquivo.Salva_Inimigo(inimigos[i]);
         arquivo.Salva_Cenario(&Cenario01);

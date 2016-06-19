@@ -32,7 +32,7 @@ public:
 
     int Salva_jogo(/* Fase f */);
     /*Fase*/ void Load_jogo();
-    int Salva_Jogador(Jogador j);
+    int Salva_Jogador(Jogador *j);
     void Load_Jogador(Jogador *j);
     int Salva_Inimigo(Inimigo *i);
     void Load_Inimigo(Inimigo *i);

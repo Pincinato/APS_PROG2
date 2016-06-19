@@ -189,7 +189,7 @@ int GerenciadorArquivo::Salva_Inimigo(Inimigo *i){
     return 1;
 }
 
-int GerenciadorArquivo::Salva_Jogador(Jogador j){
+int GerenciadorArquivo::Salva_Jogador(Jogador *j){
 
     printf("Salvando jogador\n");
     arquivo = fopen("Arquivo_Teste.txt","a");
@@ -199,16 +199,16 @@ int GerenciadorArquivo::Salva_Jogador(Jogador j){
     std:: string name_jogador;
     info_y.clear();
     printf("pegando dados da posicao x \n");
-    info_jogador = to_string(j.GetposX());
+    info_jogador = to_string(j->GetposX());
     info_jogador.append("\n");
     printf("pegando dados da posicao y \n");
-    info_y = to_string(j.GetposY());
+    info_y = to_string(j->GetposY());
     info_y.append("\n");
     info_y.append("\0");
     info_jogador.append(&info_y[0]);
     info_jogador.append("\0");
     id_jogador.clear();
-    id_jogador = to_string(j.GetId());
+    id_jogador = to_string(j->GetId());
     id_jogador.append("\0");
     name_jogador.clear();
     name_jogador.append("Jogador");

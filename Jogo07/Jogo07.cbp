@@ -57,6 +57,8 @@
 		<Unit filename="Fase1.h" />
 		<Unit filename="Fase2.cpp" />
 		<Unit filename="Fase2.h" />
+		<Unit filename="Fase3.cpp" />
+		<Unit filename="Fase3.h" />
 		<Unit filename="GerenciadorArquivo.cpp" />
 		<Unit filename="GerenciadorArquivo.h" />
 		<Unit filename="GerenciadorGrafico.cpp" />

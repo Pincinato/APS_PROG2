@@ -27,6 +27,7 @@ public:
     void SetControl_posx(const int control);
     void Ajusteposx();
     const int GetId();
+    void DesenhaPersonagem();
 
 
 protected:

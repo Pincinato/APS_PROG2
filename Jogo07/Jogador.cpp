@@ -6,15 +6,15 @@
 Jogador::Jogador():Personagem()
 {
     Forma = NULL;
-    posx = 50;
-    posy = 360;
-    posy_pulo=posy;
-    direcao = DIREITA;
-    sourceX = 104;
-    sourceY = 0;
-    Forma = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Sonic.png");
+    this->posx = 50;
+    this->posy = 360;
+    this->posy_pulo=posy;
+    this->direcao = DIREITA;
+    this->sourceX = 104;
+    this->sourceY = 0;
+    this->Forma = al_load_bitmap("/home/thiago/TeM/Jogo07/Imagens/Sonic.png");
     id++;
-    myId=id;
+    this->myId=id;
 // CarregaImagem(); // CARREGA AS IMAGENS DO PERSONAGEM
 }
 

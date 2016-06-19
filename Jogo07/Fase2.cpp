@@ -183,9 +183,9 @@ if(!fim){
         Salve();
         arquivo.Salva_jogo();
         arquivo.Salva_Fase(name);
-        arquivo.Salva_Jogador(Player1);
+        arquivo.Salva_Jogador(&Player1);
         if(player_2==true)
-            arquivo.Salva_Jogador(Player1);
+            arquivo.Salva_Jogador(&Player2);
         for(int i=0; i<3;i++)
             arquivo.Salva_Inimigo(inimigos[i]);
         arquivo.Salva_Cenario(&Cenario01);
@@ -297,7 +297,7 @@ if(!fim){
         al_draw_filled_rectangle(0, 0, 800, 600, al_map_rgb(255, 255, 255));
 
         Cenario01.DesenhaCenario();
-        if(DEBUG ==0) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
+        if(DEBUG ==1) {cout << "POSICAO DO CENARIO: "<< Cenario01.GetX() << endl;}
          if(DEBUG==1){printf("Tratamento de colisão Cenario \n");}
         if(Cenario01.GetX()<=x_inimigo[0] && Cenario01.GetX() > x_inimigo[0] -Enemy1.Getdeslocamento()/2-al_get_bitmap_width(Enemy1.Forma)/2 )
             {
