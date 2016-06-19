@@ -23,6 +23,7 @@ public:
     void Tratamento_colisao(Inimigo *EnemyA,int x,Jogador *player);
     void Salve();
     void Load();
+    bool Get_load();
 
 private:
     Cenario Cenario01;

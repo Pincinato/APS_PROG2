@@ -21,6 +21,7 @@ public:
     void Play();
     void SetName(std::string n);
     const char * GetName();
+    virtual bool Get_load();
 
 
 

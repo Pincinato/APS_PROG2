@@ -357,29 +357,9 @@ if(!fim){
     }
 }
 
+bool Fase1::Get_load(){
 
-/*
-
-
-
-                if(player_2==true){
-                    if(ALLEGRO_KEY_A || ALLEGRO_KEY_D)
-                    {
-                    Player2.SetX();
-                        if(ALLEGRO_KEY_A)
-                            Player2.SetDirecao(ESQUERDA);
-                        else
-                            Player2.SetDirecao(DIREITA);
-                    }
-                    else if(ALLEGRO_KEY_W)
-                    {
-                        Player2.SetDirecao(CIMA);
-                    }
-                    else if(ALLEGRO_KEY_S)
-                    {
-                        Player2.SetDirecao(BAIXO);
-                    }
-            }
-
-
-            */
+    if(load==true)
+        return load;
+    return false;
+}

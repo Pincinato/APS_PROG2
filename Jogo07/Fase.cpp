@@ -185,4 +185,8 @@ void Fase::Play(){
 
 }
 
+bool Fase::Get_load(){
+
+    return load;
+}
 
