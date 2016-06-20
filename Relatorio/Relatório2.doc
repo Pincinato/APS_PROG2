@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
-<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:svg="http://www.w3.org/2000/svg" xid-max="659" xmlns:dc="http://purl.org/dc/elements/1.1/" styles="locked" fileformat="1.1" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="659" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
 <!-- ======================================================================== -->
 <!-- This file is an AbiWord document.                                        -->
 <!-- AbiWord is a free, Open Source word processor.                           -->
@@ -9,11 +9,18 @@
 <!-- ======================================================================== -->
 
 <metadata>
+<m key="abiword.date_last_changed">Sun Jun 19 21:40:09 2016
+</m>
 <m key="abiword.generator">AbiWord</m>
+<m key="dc.date">Sun Jun 19 21:40:09 2016
+</m>
 <m key="dc.format">application/x-abiword</m>
 </metadata>
 <rdf>
 </rdf>
+<history version="1" edit-time="14" last-saved="1466383209" uid="8079fd1a-367f-11e6-8ef9-a2858f85cb03">
+<version id="1" started="1466383209" uid="8a7f1f84-367f-11e6-8ef9-a2858f85cb03" auto="0" top-xid="659"/>
+</history>
 <styles>
 <s type="P" name="Title" basedon="_Normal" props="text-align:center; font-weight:bold; font-size:14.000000pt"/>
 <s type="P" name="_Normal" basedon="_Normal"/>
@@ -96,7 +103,7 @@
 <p xid="9" props="text-align:center"><c props="font-size:12.000000pt">Primeiro Autor, Segundo Autor</c></p>
 <p xid="10" props="text-align:center">primeiro.autor<bookmark type="start" name="_Hlt485612310" xid="11"/>@<bookmark type="end" name="_Hlt485612310" xid="12"/>utfpr.edu.br, segundo.autor@utfpr.edu.br</p>
 <p xid="13" props="text-align:center"><c></c></p>
-<p xid="14" props="text-align:left">Disciplina: <c props="font-weight:bold">Fundamentos de Programação 2</c> / S11 – Prof. Dr. Jean M. Simão</p>
+<p xid="14" props="text-align:center">Disciplina: <c props="font-weight:bold">Fundamentos de Programação 2</c> / S11 – Prof. Dr. Jean M. Simão</p>
 <p xid="15" props="text-align:center"><c props="font-weight:bold">Departamento Acadêmico de Eletrônica – DAELN </c>- Campus de Curitiba</p>
 <p style="heading 3" xid="16">Universidade Tecnológica Federal do Paraná - UTFPR</p>
 <p xid="17" props="text-align:center">Avenida Sete de Setembro, 3165 - Curitiba/PR, Brasil - CEP 80230-901</p>
